@@ -24,7 +24,7 @@ public class LocationID {
         switch (locationID) {
             // Lobbies
             case "MAIN ISLAND" -> {
-                return "In main lobby";
+                return "On the Main Island";
             }
             case "SLIME FACTORY" -> {
                 return "In HITW lobby";
@@ -44,11 +44,11 @@ public class LocationID {
                 return "Playing HITW";
             }
             case "BATTLE BOX" -> {
-                return "Player Battle Box";
+                return "Playing Battle Box";
             }
             // Limbo
             case "LIMBO" -> {
-                return "In limbo";
+                return "In Limbo";
             }
 
             default -> {
