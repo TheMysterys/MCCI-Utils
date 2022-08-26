@@ -35,11 +35,11 @@ public class DiscordRP {
     }
 
     public static void updateStatus(String state, String details) {
-        if (!isRPRunning) {
+        if (!isRPRunning && ModConfig.INSTANCE.enableDiscordStatus) {
             setup();
         }
         if(discordRPErrorcode == 0) {
-            if (!ModConfig.INSTANCE.enableDiscordStatus) {
+            if (isRPRunning && !ModConfig.INSTANCE.enableDiscordStatus) {
                 closeRP();
             } else {
                 try {
