@@ -18,6 +18,9 @@ public class LocationID {
     }
 
     public static String generateStateString() {
+        if (locationID == null) {
+            return "Unknown";
+        }
         switch (locationID) {
             // Lobbies
             case "MAIN ISLAND" -> {

@@ -4,9 +4,11 @@
   "package": "com.themysterys.mcciutils.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "DisconnectMixin",
+    "LocationMixin"
   ],
   "client": [
-    "MinecraftClientMixin"
+    "UnsecureChatMixin"
   ],
   "injectors": {
     "defaultRequire": 1
