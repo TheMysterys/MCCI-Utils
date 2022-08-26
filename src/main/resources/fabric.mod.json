@@ -3,11 +3,15 @@
   "id": "mcciutils",
   "version": "${version}",
   "name": "MCCI Utils",
-  "description": "",
+  "description": "A utility mod for the Minecraft server MCC Island",
   "authors": [
     "TheMysterys"
   ],
-  "contact": {},
+  "contact": {
+    "issues": "https://github.com/TheMysterys/MCCI-Utils/issues",
+    "sources": "https://github.com/TheMysterys/MCCI-Utils",
+    "homepage": "https://modrinth.com/mod/mcci-utils"
+  },
   "license": "MIT",
   "icon": "assets/mcciutils/icon.png",
   "environment": "client",
