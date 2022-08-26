@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "mcciutils",
+  "version": "${version}",
+  "name": "MCCI Utils",
+  "description": "",
+  "authors": [
+    "TheMysterys"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/mcciutils/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "modmenu": [
+      "com.themysterys.mcciutils.util.config.ModMenuConfig"
+    ],
+    "main": [
+      "com.themysterys.mcciutils.McciUtils"
+    ]
+  },
+  "mixins": [
+    "mcciutils.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}

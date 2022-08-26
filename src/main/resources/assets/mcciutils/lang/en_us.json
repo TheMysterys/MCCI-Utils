@@ -1,0 +1,15 @@
+{
+  "key.category.mcciutils": "MCCI Utils",
+
+  "mcciutils.config.general": "General",
+
+  "mcciutils.config.enableDiscordStatus": "Toggle Discord Status",
+  "mcciutils.config.enableDiscordStatus.line1": "Toggles the Discord Status on and off.",
+  "mcciutils.config.enableDiscordStatus.line2": "You will need to switch lobbies for status to update.",
+
+  "mcciutils.config.customDetails": "Change details",
+  "mcciutils.config.customDetails.line1": "IP: Displays the server IP",
+  "mcciutils.config.customDetails.line2": "USERNAME: Shows the username of the player",
+  "mcciutils.config.customDetails.line3": "MODVERSION: Shows the version of the mod",
+    "mcciutils.config.customDetails.line4": "You will need to switch lobbies for status to update."
+}
