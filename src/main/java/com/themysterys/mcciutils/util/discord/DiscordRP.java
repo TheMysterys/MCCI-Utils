@@ -94,7 +94,7 @@ public class DiscordRP {
             return switch (ModConfig.INSTANCE.customDetails) {
                 case IP -> "IP: play.mccisland.net";
                 case USERNAME -> "Playing as " + MinecraftClient.getInstance().getSession().getUsername();
-                case MODVERSION -> "Using Version v" + McciUtils.modVersion;
+                case MOD_VERSION -> "Using Version v" + McciUtils.modVersion;
             };
         }
     }

@@ -17,9 +17,9 @@ public class ModMenuConfig implements ModMenuApi {
                 .setTransparentBackground(true)
                 .setSavingRunnable(ModConfig::writeJson);
 
-        ConfigCategory general = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.config.general"));
+        ConfigCategory discordCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.discord"));
 
-        general.addEntry(configBuilder.entryBuilder()
+        discordCategory.addEntry(configBuilder.entryBuilder()
                 .startBooleanToggle(Text.translatable("mcciutils.config.enableDiscordStatus"), ModConfig.INSTANCE.enableDiscordStatus)
                 .setDefaultValue(true)
                 .setTooltip(
@@ -30,17 +30,54 @@ public class ModMenuConfig implements ModMenuApi {
                 .build()
         );
 
-        general.addEntry(configBuilder.entryBuilder()
+        discordCategory.addEntry(configBuilder.entryBuilder()
                 .startEnumSelector(Text.translatable("mcciutils.config.customDetails"), RPCustomDetails.class, ModConfig.INSTANCE.customDetails)
                 .setDefaultValue(RPCustomDetails.IP)
                 .setTooltip(
                         Text.translatable("mcciutils.config.customDetails.line1"),
                         Text.translatable("mcciutils.config.customDetails.line2"),
-                        Text.translatable("mcciutils.config.customDetails.line3")
+                        Text.translatable("mcciutils.config.customDetails.line3"),
+                        Text.translatable("mcciutils.config.customDetails.line4")
                 )
                 .setSaveConsumer(val -> ModConfig.INSTANCE.customDetails = val)
                 .build()
         );
+
+        ConfigCategory friendNotificationCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.friendNotifications"));
+
+        friendNotificationCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.friendNotificationOptions"), ConfigInstance.FriendNotificationOptions.class, ModConfig.INSTANCE.friendNotificationOptions)
+                .setDefaultValue(ConfigInstance.FriendNotificationOptions.BOTH)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.friendNotificationOptions.line1"),
+                        Text.translatable("mcciutils.config.friendNotificationOptions.line2"),
+                        Text.translatable("mcciutils.config.friendNotificationOptions.line3")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.friendNotificationOptions = val)
+                .build()
+        );
+
+        ConfigCategory chatMentionCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.chatMention"));
+
+        chatMentionCategory.addEntry(configBuilder.entryBuilder()
+                .startBooleanToggle(Text.translatable("mcciutils.config.enableChatMentions"), ModConfig.INSTANCE.enableChatMentions)
+                .setDefaultValue(true)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.enableChatMentions.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.enableChatMentions = val)
+                .build()
+        );
+
+        /*chatMentionCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.chatMentionColor"), ConfigInstance.MentionColor.class, ModConfig.INSTANCE.chatMentionColor)
+                .setDefaultValue(ConfigInstance.MentionColor.YELLOW)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.chatMentionColor.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentionColor = val)
+                .build()
+        );*/
 
         return configBuilder;
     }
