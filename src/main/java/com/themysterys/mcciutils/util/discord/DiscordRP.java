@@ -35,24 +35,29 @@ public class DiscordRP {
     }
 
     public static void updateStatus(String state, String details) {
+        // Make sure there are no errors before updating status.
+        if (discordRPErrorcode != 0) return;
+
+        // Setup status client if it has been closed and toggled on.
         if (!isRPRunning && ModConfig.INSTANCE.enableDiscordStatus) {
             setup();
         }
-        if(discordRPErrorcode == 0) {
-            if (isRPRunning && !ModConfig.INSTANCE.enableDiscordStatus) {
-                closeRP();
-            } else {
-                try {
-                    builder.setState(state)
-                            .setDetails(details)
-                            .setStartTimestamp(OffsetDateTime.now())
-                            .setLargeImage("logo", "play.mccisland.net")
-                            .addButton("Get MCCI Utils", "https://modrinth.com/mod/mcci-utils");
-                    client.sendRichPresence(builder.build());
-                } catch (IllegalStateException e) {
-                    McciUtils.LOGGER.error("IPC not connected! Attempting to reconnect IPC");
-                    connectClient();
-                }
+
+        // Close status if toggled off and is running.
+        if (isRPRunning && !ModConfig.INSTANCE.enableDiscordStatus) {
+            closeRP();
+        } else {
+            // Update status.
+            try {
+                builder.setState(state)
+                        .setDetails(details)
+                        .setStartTimestamp(OffsetDateTime.now())
+                        .setLargeImage("logo", "play.mccisland.net")
+                        .addButton("Get MCCI Utils", "https://modrinth.com/mod/mcci-utils");
+                client.sendRichPresence(builder.build());
+            } catch (IllegalStateException e) {
+                McciUtils.LOGGER.error("IPC not connected! Attempting to reconnect IPC");
+                connectClient();
             }
         }
     }
