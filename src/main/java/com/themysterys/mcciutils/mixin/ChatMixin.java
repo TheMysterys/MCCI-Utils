@@ -28,8 +28,8 @@ public class ChatMixin {
 
         // Friend notifications
         if (ModConfig.INSTANCE.friendNotificationOptions != ConfigInstance.FriendNotificationOptions.OFF) {
-            if (message.getString().matches("^([a-zA-Z_]{1,16}) has come online!")) {
-                Pattern pattern = Pattern.compile("^([a-zA-Z_]{1,16}) has come online!");
+            if (message.getString().matches("^(\\w{1,16}) has come online!")) {
+                Pattern pattern = Pattern.compile("^(\\w{1,16}) has come online!");
                 String name = pattern.matcher(message.getString()).replaceFirst("$1");
                 if (name != null) {
                     if (ModConfig.INSTANCE.shouldShowFriendPopup()) {
@@ -40,8 +40,8 @@ public class ChatMixin {
                         MinecraftClient.getInstance().player.playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, 1F,1F);
                     }
                 }
-            } else if (message.getString().matches("^([a-zA-Z_]{1,16}) has gone offline.")) {
-                Pattern pattern = Pattern.compile("^([a-zA-Z_]{1,16}) has gone offline.");
+            } else if (message.getString().matches("^(\\w{1,16}) has gone offline.")) {
+                Pattern pattern = Pattern.compile("^(\\w{1,16}) has gone offline.");
                 String name = pattern.matcher(message.getString()).replaceFirst("$1");
                 if (name != null) {
                     if (ModConfig.INSTANCE.shouldShowFriendPopup()) {
@@ -60,7 +60,7 @@ public class ChatMixin {
             if (MinecraftClient.getInstance().player != null) {
                 String username = MinecraftClient.getInstance().player.getName().getString();
 
-                Pattern pattern = Pattern.compile(".. [a-zA-Z_]{1,16}: ?.* " + username + " ?.*");
+                Pattern pattern = Pattern.compile(".. \\w{1,16}: ?.*" + username + ".*");
                 // if message contains username but not at the beginning of the message
                 // play sound
                 if (pattern.matcher(message.getString()).find()) {
