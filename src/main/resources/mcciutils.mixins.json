@@ -9,8 +9,7 @@
     "LocationMixin"
   ],
   "client": [
-    "DeveloperBadge",
-    "UnsecureChatMixin"
+    "DeveloperBadge"
   ],
   "injectors": {
     "defaultRequire": 1
