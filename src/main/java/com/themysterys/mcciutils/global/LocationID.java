@@ -1,4 +1,4 @@
-package com.themysterys.mcciutils.Global;
+package com.themysterys.mcciutils.global;
 
 import com.themysterys.mcciutils.util.discord.DiscordRP;
 

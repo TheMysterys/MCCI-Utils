@@ -1,6 +1,6 @@
 package com.themysterys.mcciutils.mixin;
 
-import com.themysterys.mcciutils.Global.LocationID;
+import com.themysterys.mcciutils.global.LocationID;
 import com.themysterys.mcciutils.McciUtils;
 import net.minecraft.scoreboard.ScoreboardObjective;
 import net.minecraft.text.Text;
