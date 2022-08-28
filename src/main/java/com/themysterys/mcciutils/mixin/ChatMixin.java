@@ -96,6 +96,7 @@ public class ChatMixin {
             if (text.getString().contains(username)){
                 System.out.println("Found username");
             }
+            i++;
         }
         return value;
     }
