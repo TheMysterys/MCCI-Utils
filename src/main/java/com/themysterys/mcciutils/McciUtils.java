@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallba
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ServerInfo;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -35,7 +36,7 @@ public class McciUtils implements ModInitializer {
         mcci.setResourcePackPolicy(ServerInfo.ResourcePackPolicy.ENABLED);
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> dispatcher.register(literal("goat").executes(ctx -> {
-            ctx.getSource().getPlayer().playSound(SoundEvents.ENTITY_GOAT_SCREAMING_AMBIENT, 1F, 1F);
+            ctx.getSource().getPlayer().playSound(SoundEvents.ENTITY_GOAT_SCREAMING_AMBIENT, SoundCategory.MASTER, 1F, 1F);
             ctx.getSource().sendFeedback(Text.literal("Gray Goats!").formatted(Formatting.GRAY));
             return 1;
         })));
