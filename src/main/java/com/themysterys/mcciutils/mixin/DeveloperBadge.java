@@ -22,14 +22,17 @@ public class DeveloperBadge {
 
     @Inject(at = @At("RETURN"), method = "getPlayerName", cancellable = true)
     public void getDisplayName(CallbackInfoReturnable<Text> cir) {
-        if (!McciUtils.isOnMCCI()) {
-            return;
-        }
         Text name = cir.getReturnValue();
-        if (name.getString().contains("TheMysterys")) {
-            MutableText mutableText = name.copy();
-            mutableText.append(Text.literal("\uE07D").setStyle(Style.EMPTY.withFont(new Identifier("mcc:icon"))).formatted(Formatting.WHITE));
-            cir.setReturnValue(mutableText);
+        if (!McciUtils.isOnMCCI()) {
+            if (name.getString().contains("\uE07D")) {
+                cir.setReturnValue(Text.of(name.getString().replace("\uE07D", "")));
+            }
+        } else {
+            if (name.getString().contains("TheMysterys")) {
+                MutableText mutableText = name.copy();
+                mutableText.append(Text.literal("\uE07D").setStyle(Style.EMPTY.withFont(new Identifier("mcc:icon"))).formatted(Formatting.WHITE));
+                cir.setReturnValue(mutableText);
+            }
         }
     }
 }
