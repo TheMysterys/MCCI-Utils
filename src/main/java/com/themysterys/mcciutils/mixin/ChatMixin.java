@@ -5,15 +5,21 @@ import com.themysterys.mcciutils.util.config.ConfigInstance;
 import com.themysterys.mcciutils.util.config.ModConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
+import net.minecraft.client.gui.hud.ChatHudLine;
 import net.minecraft.client.toast.SystemToast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+
+import java.util.List;
 import java.util.regex.Pattern;
 
 import static com.themysterys.mcciutils.util.sounds.Sounds.FRIEND_SOUND;
@@ -24,9 +30,9 @@ public class ChatMixin {
 
     @Inject(at = @At("HEAD"), method = "addMessage(Lnet/minecraft/text/Text;)V")
     private void addMessage(Text message, CallbackInfo ci) {
-        if (!McciUtils.isOnMCCI()) {
+        /*if (!McciUtils.isOnMCCI()) {
             return;
-        }
+        }*/
         McciUtils.LOGGER.info("Message: " + message.getString());
 
         // Friend notifications
@@ -61,7 +67,7 @@ public class ChatMixin {
         // Chat mentions
         if (ModConfig.INSTANCE.enableChatMentions) {
             if (MinecraftClient.getInstance().player != null) {
-                String username = MinecraftClient.getInstance().player.getName().getString();
+                String username = MinecraftClient.getInstance().getSession().getUsername();
 
                 Pattern pattern = Pattern.compile("^.. \\w{1,16}: ?.*" + username + ".*");
                 // if message contains username but not at the beginning of the message
@@ -77,5 +83,20 @@ public class ChatMixin {
         }
 
         // Other notifiations
+    }
+
+    @ModifyVariable(at = @At("HEAD"), method = "addMessage(Lnet/minecraft/text/Text;)V", argsOnly = true)
+    private Text modifyMessage(Text value) {
+        System.out.println("Got message: " + value.getString());
+        List<Text> fullMessage = value.getSiblings();
+        String username = MinecraftClient.getInstance().getSession().getUsername();
+        int i = 0;
+        for (Text text : fullMessage) {
+            System.out.println(i + ": " + text.getString());
+            if (text.getString().contains(username)){
+                System.out.println("Found username");
+            }
+        }
+        return value;
     }
 }
