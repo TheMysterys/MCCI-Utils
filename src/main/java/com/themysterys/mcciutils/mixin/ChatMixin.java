@@ -7,6 +7,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.toast.SystemToast;
 import net.minecraft.client.toast.ToastManager;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -39,7 +40,7 @@ public class ChatMixin {
                         SystemToast.add(toastManager, SystemToast.Type.PERIODIC_NOTIFICATION, Text.of("Friend Joined"), Text.of(name));
                     }
                     if (MinecraftClient.getInstance().player != null && ModConfig.INSTANCE.shouldPlayFriendSound()) {
-                        MinecraftClient.getInstance().player.playSound(FRIEND_SOUND, 1F,1F);
+                        MinecraftClient.getInstance().player.playSound(FRIEND_SOUND, SoundCategory.MASTER, 1F,1F);
                     }
                 }
             } else if (message.getString().matches("^(\\w{1,16}) has gone offline.")) {
@@ -51,7 +52,7 @@ public class ChatMixin {
                         SystemToast.add(toastManager, SystemToast.Type.PERIODIC_NOTIFICATION, Text.of("Friend Left"), Text.of(name));
                     }
                     if (MinecraftClient.getInstance().player != null && ModConfig.INSTANCE.shouldPlayFriendSound()) {
-                        MinecraftClient.getInstance().player.playSound(FRIEND_SOUND, 1F,1F);
+                        MinecraftClient.getInstance().player.playSound(FRIEND_SOUND, SoundCategory.MASTER, 1F,1F);
                     }
                 }
             }
@@ -67,7 +68,7 @@ public class ChatMixin {
                 // play sound
                 if (pattern.matcher(message.getString()).find()) {
 
-                    MinecraftClient.getInstance().player.playSound(MENTION_SOUND, 1F,1F);
+                    MinecraftClient.getInstance().player.playSound(MENTION_SOUND, SoundCategory.MASTER, 1F,1F);
                 }
                 // TODO: work out a way to color the username without causing a crash
                 //message = Text.of(pattern.matcher(message.getString()).replaceAll(ModConfig.INSTANCE.chatMentionColor + "$1§r"));
