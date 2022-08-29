@@ -21,7 +21,9 @@
     "mcciutils.config.friendNotificationOptions.line3": "OFF: Disables friend notifications",
 
     "mcciutils.config.enableChatMentions": "Toggle Chat Mention",
-    "mcciutils.config.enableChatMentions.line1": "Toggles chat mentions on and off",
+    "mcciutils.config.enableChatMentions.line1": "COLOR: Colors the username in chat when mentioned",
+    "mcciutils.config.enableChatMentions.line2": "SOUND: Plays a sound when you are mentioned in chat",
+    "mcciutils.config.enableChatMentions.line3": "OFF: Disables chat mentions",
 
     "mcciutils.config.chatMentionColor": "Chat Mention Color",
     "mcciutils.config.chatMentionColor.line1": "Changes the color of the chat mention"

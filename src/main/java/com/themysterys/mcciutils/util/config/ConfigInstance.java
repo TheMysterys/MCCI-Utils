@@ -1,12 +1,14 @@
 package com.themysterys.mcciutils.util.config;
 
+import net.minecraft.util.Formatting;
+
 public class ConfigInstance {
 
     public boolean enableDiscordStatus;
     public RPCustomDetails customDetails;
     public FriendNotificationOptions friendNotificationOptions;
-    public boolean enableChatMentions;
-    //public MentionColor chatMentionColor;
+    public MentionOptions chatMentionsOptions;
+    public MentionColor chatMentionColor;
 
     public ConfigInstance() {
         // Status
@@ -15,8 +17,8 @@ public class ConfigInstance {
         // Friend Notification
         friendNotificationOptions = FriendNotificationOptions.BOTH;
         // Chat Mentions
-        enableChatMentions = true;
-        //chatMentionColor = MentionColor.YELLOW;
+        chatMentionsOptions = MentionOptions.BOTH;
+        chatMentionColor = MentionColor.YELLOW;
 
     }
 
@@ -37,22 +39,36 @@ public class ConfigInstance {
         FriendNotificationOptions() {}
     }
 
-    public enum MentionColor {
-        YELLOW("§e"),
-        GOLD("§6"),
-        GREEN("§a"),
-        DARK_GREEN("§2"),
-        RED("§c"),
-        DARK_RED("§4"),
-        BLUE("§9"),
-        DARK_BLUE("§1"),
-        AQUA("§b"),
-        DARK_AQUA("§3"),
-        PINK("§d"),
-        PURPLE("§5"),
-        NO_COLOR("");
+    public enum MentionOptions {
+        BOTH,
+        COLOR,
+        SOUND,
+        OFF;
 
-        MentionColor(String color){}
+        MentionOptions() {}
+    }
+
+    public enum MentionColor {
+        YELLOW(Formatting.YELLOW),
+        GOLD(Formatting.GOLD),
+        GREEN(Formatting.GREEN),
+        DARK_GREEN(Formatting.DARK_GREEN),
+        RED(Formatting.RED),
+        DARK_RED(Formatting.DARK_RED),
+        BLUE(Formatting.BLUE),
+        DARK_BLUE(Formatting.DARK_BLUE),
+        AQUA(Formatting.AQUA),
+        DARK_AQUA(Formatting.DARK_AQUA),
+        PINK(Formatting.LIGHT_PURPLE),
+        PURPLE(Formatting.DARK_PURPLE);
+        private final Formatting formatting;
+        MentionColor(Formatting color){
+            this.formatting = color;
+        }
+
+        public Formatting getColor() {
+            return formatting;
+        }
     }
 
 
@@ -63,6 +79,14 @@ public class ConfigInstance {
 
     public boolean shouldPlayFriendSound() {
         return friendNotificationOptions == FriendNotificationOptions.BOTH || friendNotificationOptions == FriendNotificationOptions.SOUND;
+    }
+
+    public boolean shouldColorMention() {
+        return chatMentionsOptions == MentionOptions.BOTH || chatMentionsOptions == MentionOptions.COLOR;
+    }
+
+    public boolean shouldPlayMentionSound() {
+        return chatMentionsOptions == MentionOptions.BOTH || chatMentionsOptions == MentionOptions.SOUND;
     }
 
 }

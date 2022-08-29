@@ -60,16 +60,18 @@ public class ModMenuConfig implements ModMenuApi {
         ConfigCategory chatMentionCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.chatMention"));
 
         chatMentionCategory.addEntry(configBuilder.entryBuilder()
-                .startBooleanToggle(Text.translatable("mcciutils.config.enableChatMentions"), ModConfig.INSTANCE.enableChatMentions)
-                .setDefaultValue(true)
+                .startEnumSelector(Text.translatable("mcciutils.config.enableChatMentions"), ConfigInstance.MentionOptions.class, ModConfig.INSTANCE.chatMentionsOptions)
+                .setDefaultValue(ConfigInstance.MentionOptions.BOTH)
                 .setTooltip(
-                        Text.translatable("mcciutils.config.enableChatMentions.line1")
+                        Text.translatable("mcciutils.config.enableChatMentions.line1"),
+                        Text.translatable("mcciutils.config.enableChatMentions.line2"),
+                        Text.translatable("mcciutils.config.enableChatMentions.line3")
                 )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.enableChatMentions = val)
+                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentionsOptions = val)
                 .build()
         );
 
-        /*chatMentionCategory.addEntry(configBuilder.entryBuilder()
+        chatMentionCategory.addEntry(configBuilder.entryBuilder()
                 .startEnumSelector(Text.translatable("mcciutils.config.chatMentionColor"), ConfigInstance.MentionColor.class, ModConfig.INSTANCE.chatMentionColor)
                 .setDefaultValue(ConfigInstance.MentionColor.YELLOW)
                 .setTooltip(
@@ -77,7 +79,7 @@ public class ModMenuConfig implements ModMenuApi {
                 )
                 .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentionColor = val)
                 .build()
-        );*/
+        );
 
         return configBuilder;
     }
