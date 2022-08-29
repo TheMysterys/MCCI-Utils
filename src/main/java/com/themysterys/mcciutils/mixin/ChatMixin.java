@@ -5,14 +5,11 @@ import com.themysterys.mcciutils.util.config.ConfigInstance;
 import com.themysterys.mcciutils.util.config.ModConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
-import net.minecraft.client.gui.hud.ChatHudLine;
 import net.minecraft.client.toast.SystemToast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.text.Text;
-import org.spongepowered.asm.mixin.Final;
+import net.minecraft.text.*;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -30,10 +27,9 @@ public class ChatMixin {
 
     @Inject(at = @At("HEAD"), method = "addMessage(Lnet/minecraft/text/Text;)V")
     private void addMessage(Text message, CallbackInfo ci) {
-        /*if (!McciUtils.isOnMCCI()) {
+        if (!McciUtils.isOnMCCI()) {
             return;
-        }*/
-        McciUtils.LOGGER.info("Message: " + message.getString());
+        }
 
         // Friend notifications
         if (ModConfig.INSTANCE.friendNotificationOptions != ConfigInstance.FriendNotificationOptions.OFF) {
@@ -65,7 +61,7 @@ public class ChatMixin {
         }
 
         // Chat mentions
-        if (ModConfig.INSTANCE.enableChatMentions) {
+        if (ModConfig.INSTANCE.shouldPlayMentionSound()) {
             if (MinecraftClient.getInstance().player != null) {
                 String username = MinecraftClient.getInstance().getSession().getUsername();
 
@@ -85,19 +81,33 @@ public class ChatMixin {
         // Other notifiations
     }
 
+    // Use for mentions (Maybe will add more in the future, unsure)
     @ModifyVariable(at = @At("HEAD"), method = "addMessage(Lnet/minecraft/text/Text;)V", argsOnly = true)
     private Text modifyMessage(Text value) {
-        System.out.println("Got message: " + value.getString());
-        List<Text> fullMessage = value.getSiblings();
-        String username = MinecraftClient.getInstance().getSession().getUsername();
-        int i = 0;
-        for (Text text : fullMessage) {
-            System.out.println(i + ": " + text.getString());
-            if (text.getString().contains(username)){
-                System.out.println("Found username");
-            }
-            i++;
+        if (!McciUtils.isOnMCCI() || !ModConfig.INSTANCE.shouldColorMention()) {
+            return value;
         }
-        return value;
+
+        String username = MinecraftClient.getInstance().getSession().getUsername();
+        if (!value.getString().contains(username)) return value;
+        List<Text> fullMessage = value.getSiblings();
+
+        MutableText newMessage = MutableText.of(TextContent.EMPTY);
+        if (!fullMessage.get(fullMessage.size()-1).toString().contains(username)) return value;
+
+        for (int i = 0; i < fullMessage.size(); i++) {
+            if (i == fullMessage.size() - 1) {
+                String[] split = fullMessage.get(i).getString().split(username);
+                newMessage.append(switch(split.length){
+                    case 0 -> Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor());
+                    case 1 -> Text.literal(split[0]).append(Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor()));
+                    default -> Text.literal(split[0]).append(Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor())).append(Text.literal(split[1]));
+                });
+            } else {
+                newMessage.append(fullMessage.get(i));
+            }
+        }
+
+        return newMessage;
     }
 }
