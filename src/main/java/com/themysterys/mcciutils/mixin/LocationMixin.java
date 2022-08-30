@@ -20,13 +20,11 @@ public class LocationMixin {
     @Inject(at= @At("HEAD"), method = "setDisplayName")
     private void onScoreboardObjectiveUpdate(Text name, CallbackInfo ci) {
         if(McciUtils.isOnMCCI()) {
-            McciUtils.LOGGER.info("Scoreboard objective update: " + name.toString());
             Pattern pattern = Pattern.compile("literal\\{([A-Z ]+)}", Pattern.DOTALL);
             Matcher matcher = pattern.matcher(name.toString());
             while (matcher.find()) {
                 String location = matcher.group(1).strip();
                 if (location.length() > 0 && !location.equals(Lastlocation)) {
-                    McciUtils.LOGGER.info("Location changed to " + location);
                     LocationID.updateLocationID(location);
                     Lastlocation = location;
                     LocationID.sendPresence();
