@@ -9,7 +9,8 @@
     "LocationMixin"
   ],
   "client": [
-    "DeveloperBadge"
+    "DeveloperBadge",
+    "UpdateCheckMixin"
   ],
   "injectors": {
     "defaultRequire": 1
