@@ -92,25 +92,29 @@ public class ChatMixin {
         }
 
         String username = MinecraftClient.getInstance().getSession().getUsername();
-        if (!value.getString().contains(username)) return value;
-        List<Text> fullMessage = value.getSiblings();
+        Pattern pattern = Pattern.compile("^.. \\w{1,16}: ?.*" + username + ".*");
+        if (pattern.matcher(value.getString()).find()) {
+            List<Text> fullMessage = value.getSiblings();
 
-        MutableText newMessage = MutableText.of(TextContent.EMPTY);
-        if (!fullMessage.get(fullMessage.size()-1).toString().contains(username)) return value;
+            MutableText newMessage = MutableText.of(TextContent.EMPTY);
+            if (!fullMessage.get(fullMessage.size() - 1).toString().contains(username)) return value;
 
-        for (int i = 0; i < fullMessage.size(); i++) {
-            if (i == fullMessage.size() - 1) {
-                String[] split = fullMessage.get(i).getString().split(username);
-                newMessage.append(switch(split.length){
-                    case 0 -> Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor());
-                    case 1 -> Text.literal(split[0]).append(Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor()));
-                    default -> Text.literal(split[0]).append(Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor())).append(Text.literal(split[1]));
-                });
-            } else {
-                newMessage.append(fullMessage.get(i));
+            for (int i = 0; i < fullMessage.size(); i++) {
+                if (i == fullMessage.size() - 1) {
+                    String[] split = fullMessage.get(i).getString().split(username);
+                    newMessage.append(switch (split.length) {
+                        case 0 -> Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor());
+                        case 1 -> Text.literal(split[0]).append(Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor()));
+                        default -> Text.literal(split[0]).append(Text.literal(username).formatted(ModConfig.INSTANCE.chatMentionColor.getColor())).append(Text.literal(split[1]));
+                    });
+                } else {
+                    newMessage.append(fullMessage.get(i));
+                }
             }
-        }
 
-        return newMessage;
+            return newMessage;
+        } else {
+            return value;
+        }
     }
 }
