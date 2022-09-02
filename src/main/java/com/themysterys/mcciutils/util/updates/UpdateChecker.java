@@ -24,7 +24,6 @@ public class UpdateChecker {
     public static boolean isUpdateAvailable() {
         try {
             JsonArray json = readJsonFromUrl("https://api.modrinth.com/v2/project/DJ1mNMjS/version");
-            System.out.println(McciUtils.modVersion);
             return !json.get(0).getAsJsonObject().get("version_number").getAsString().equals(McciUtils.modVersion);
         } catch (IOException e) {
             e.printStackTrace();
