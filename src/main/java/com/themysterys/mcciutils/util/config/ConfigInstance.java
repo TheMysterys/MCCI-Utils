@@ -6,19 +6,23 @@ public class ConfigInstance {
 
     public boolean enableDiscordStatus;
     public RPCustomDetails customDetails;
-    public FriendNotificationOptions friendNotificationOptions;
-    public MentionOptions chatMentionsOptions;
-    public MentionColor chatMentionColor;
+    public POPUP_NOTIFICATION_OPTIONS friendNotifications;
+    public CHAT_NOTIFICATION_OPTIONS chatMentions;
+    public COLOR_OPTIONS chatMentionColor;
+
+    public POPUP_NOTIFICATION_OPTIONS questCompleteOptions;
 
     public ConfigInstance() {
         // Status
         enableDiscordStatus = true;
         customDetails = RPCustomDetails.IP;
         // Friend Notification
-        friendNotificationOptions = FriendNotificationOptions.BOTH;
+        friendNotifications = POPUP_NOTIFICATION_OPTIONS.BOTH;
         // Chat Mentions
-        chatMentionsOptions = MentionOptions.BOTH;
-        chatMentionColor = MentionColor.YELLOW;
+        chatMentions = CHAT_NOTIFICATION_OPTIONS.BOTH;
+        chatMentionColor = COLOR_OPTIONS.YELLOW;
+        // Quest Complete
+        questCompleteOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
 
     }
 
@@ -31,24 +35,24 @@ public class ConfigInstance {
         RPCustomDetails(String option) {}
     }
 
-    public enum FriendNotificationOptions {
+    public enum POPUP_NOTIFICATION_OPTIONS {
         BOTH,
         POPUP,
         SOUND,
         OFF;
-        FriendNotificationOptions() {}
+        POPUP_NOTIFICATION_OPTIONS() {}
     }
 
-    public enum MentionOptions {
+    public enum CHAT_NOTIFICATION_OPTIONS {
         BOTH,
         COLOR,
         SOUND,
         OFF;
 
-        MentionOptions() {}
+        CHAT_NOTIFICATION_OPTIONS() {}
     }
 
-    public enum MentionColor {
+    public enum COLOR_OPTIONS {
         YELLOW(Formatting.YELLOW),
         GOLD(Formatting.GOLD),
         GREEN(Formatting.GREEN),
@@ -62,7 +66,7 @@ public class ConfigInstance {
         PINK(Formatting.LIGHT_PURPLE),
         PURPLE(Formatting.DARK_PURPLE);
         private final Formatting formatting;
-        MentionColor(Formatting color){
+        COLOR_OPTIONS(Formatting color){
             this.formatting = color;
         }
 
@@ -71,22 +75,29 @@ public class ConfigInstance {
         }
     }
 
-
     // Config checks
     public boolean shouldShowFriendPopup() {
-        return friendNotificationOptions == FriendNotificationOptions.BOTH || friendNotificationOptions == FriendNotificationOptions.POPUP;
+        return friendNotifications == POPUP_NOTIFICATION_OPTIONS.BOTH || friendNotifications == POPUP_NOTIFICATION_OPTIONS.POPUP;
     }
 
     public boolean shouldPlayFriendSound() {
-        return friendNotificationOptions == FriendNotificationOptions.BOTH || friendNotificationOptions == FriendNotificationOptions.SOUND;
+        return friendNotifications == POPUP_NOTIFICATION_OPTIONS.BOTH || friendNotifications == POPUP_NOTIFICATION_OPTIONS.SOUND;
     }
 
     public boolean shouldColorMention() {
-        return chatMentionsOptions == MentionOptions.BOTH || chatMentionsOptions == MentionOptions.COLOR;
+        return chatMentions == CHAT_NOTIFICATION_OPTIONS.BOTH || chatMentions == CHAT_NOTIFICATION_OPTIONS.COLOR;
     }
 
     public boolean shouldPlayMentionSound() {
-        return chatMentionsOptions == MentionOptions.BOTH || chatMentionsOptions == MentionOptions.SOUND;
+        return chatMentions == CHAT_NOTIFICATION_OPTIONS.BOTH || chatMentions == CHAT_NOTIFICATION_OPTIONS.SOUND;
+    }
+
+    public boolean shouldShowQuestPopup() {
+        return questCompleteOptions == POPUP_NOTIFICATION_OPTIONS.BOTH || questCompleteOptions == POPUP_NOTIFICATION_OPTIONS.POPUP;
+    }
+
+    public boolean shouldPlayQuestSound() {
+        return questCompleteOptions == POPUP_NOTIFICATION_OPTIONS.BOTH || questCompleteOptions == POPUP_NOTIFICATION_OPTIONS.SOUND;
     }
 
 }

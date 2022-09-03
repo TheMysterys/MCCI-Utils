@@ -43,41 +43,51 @@ public class ModMenuConfig implements ModMenuApi {
                 .build()
         );
 
-        ConfigCategory friendNotificationCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.friendNotifications"));
+        ConfigCategory notificationCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.notifications"));
 
-        friendNotificationCategory.addEntry(configBuilder.entryBuilder()
-                .startEnumSelector(Text.translatable("mcciutils.config.friendNotificationOptions"), ConfigInstance.FriendNotificationOptions.class, ModConfig.INSTANCE.friendNotificationOptions)
-                .setDefaultValue(ConfigInstance.FriendNotificationOptions.BOTH)
+        notificationCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.friendNotificationOptions"), ConfigInstance.POPUP_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.friendNotifications)
+                .setDefaultValue(ConfigInstance.POPUP_NOTIFICATION_OPTIONS.BOTH)
                 .setTooltip(
                         Text.translatable("mcciutils.config.friendNotificationOptions.line1"),
                         Text.translatable("mcciutils.config.friendNotificationOptions.line2"),
                         Text.translatable("mcciutils.config.friendNotificationOptions.line3")
                 )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.friendNotificationOptions = val)
+                .setSaveConsumer(val -> ModConfig.INSTANCE.friendNotifications = val)
                 .build()
         );
 
-        ConfigCategory chatMentionCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.chatMention"));
-
-        chatMentionCategory.addEntry(configBuilder.entryBuilder()
-                .startEnumSelector(Text.translatable("mcciutils.config.enableChatMentions"), ConfigInstance.MentionOptions.class, ModConfig.INSTANCE.chatMentionsOptions)
-                .setDefaultValue(ConfigInstance.MentionOptions.BOTH)
+        notificationCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.enableChatMentions"), ConfigInstance.CHAT_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.chatMentions)
+                .setDefaultValue(ConfigInstance.CHAT_NOTIFICATION_OPTIONS.BOTH)
                 .setTooltip(
                         Text.translatable("mcciutils.config.enableChatMentions.line1"),
                         Text.translatable("mcciutils.config.enableChatMentions.line2"),
                         Text.translatable("mcciutils.config.enableChatMentions.line3")
                 )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentionsOptions = val)
+                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentions = val)
                 .build()
         );
 
-        chatMentionCategory.addEntry(configBuilder.entryBuilder()
-                .startEnumSelector(Text.translatable("mcciutils.config.chatMentionColor"), ConfigInstance.MentionColor.class, ModConfig.INSTANCE.chatMentionColor)
-                .setDefaultValue(ConfigInstance.MentionColor.YELLOW)
+        notificationCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.chatMentionColor"), ConfigInstance.COLOR_OPTIONS.class, ModConfig.INSTANCE.chatMentionColor)
+                .setDefaultValue(ConfigInstance.COLOR_OPTIONS.YELLOW)
                 .setTooltip(
                         Text.translatable("mcciutils.config.chatMentionColor.line1")
                 )
                 .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentionColor = val)
+                .build()
+        );
+
+        notificationCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.questNotificationOptions"), ConfigInstance.POPUP_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.friendNotifications)
+                .setDefaultValue(ConfigInstance.POPUP_NOTIFICATION_OPTIONS.BOTH)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.questNotificationOptions.line1"),
+                        Text.translatable("mcciutils.config.questNotificationOptions.line2"),
+                        Text.translatable("mcciutils.config.questNotificationOptions.line3")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.friendNotifications = val)
                 .build()
         );
 
