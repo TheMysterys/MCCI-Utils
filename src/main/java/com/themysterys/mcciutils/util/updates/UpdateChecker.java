@@ -30,4 +30,14 @@ public class UpdateChecker {
         }
         return false;
     }
+
+    public static String latestVersion() {
+        try {
+            JsonArray json = readJsonFromUrl("https://api.modrinth.com/v2/project/DJ1mNMjS/version");
+            return json.get(0).getAsJsonObject().get("version_number").getAsString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "Unknown";
+    }
 }
