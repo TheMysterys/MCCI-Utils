@@ -8,5 +8,6 @@ public class RegisterCommands {
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         Goat.register(dispatcher);
         Commands.register(dispatcher);
+        Yellow.register(dispatcher);
     }
 }
