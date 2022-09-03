@@ -20,8 +20,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-import static com.themysterys.mcciutils.util.sounds.Sounds.FRIEND_SOUND;
-import static com.themysterys.mcciutils.util.sounds.Sounds.MENTION_SOUND;
+import static com.themysterys.mcciutils.util.sounds.Sounds.*;
 
 @Mixin(ChatHud.class)
 public class ChatMixin {
@@ -33,7 +32,7 @@ public class ChatMixin {
         }
 
         // Friend notifications
-        if (ModConfig.INSTANCE.friendNotificationOptions != ConfigInstance.FriendNotificationOptions.OFF) {
+        if (ModConfig.INSTANCE.friendNotifications != ConfigInstance.POPUP_NOTIFICATION_OPTIONS.OFF) {
             if (Objects.equals(message.getStyle().getColor(), TextColor.fromRgb(0xFFFF00))) {
                 if (message.getString().matches("^(\\w{1,16}) has come online!")) {
                     Pattern pattern = Pattern.compile("^(\\w{1,16}) has come online!");
@@ -43,7 +42,7 @@ public class ChatMixin {
                             ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
                             McciToast.add(toastManager, McciToast.Type.FRIEND_JOIN, Text.of(name));
                         }
-                        if (MinecraftClient.getInstance().player != null && ModConfig.INSTANCE.shouldPlayFriendSound()) {
+                        if (ModConfig.INSTANCE.shouldPlayFriendSound() && MinecraftClient.getInstance().player != null) {
                             MinecraftClient.getInstance().player.playSound(FRIEND_SOUND, SoundCategory.MASTER, 1F, 1F);
                         }
                     }
@@ -55,7 +54,7 @@ public class ChatMixin {
                             ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
                             McciToast.add(toastManager, McciToast.Type.FRIEND_LEAVE, Text.of(name));
                         }
-                        if (MinecraftClient.getInstance().player != null && ModConfig.INSTANCE.shouldPlayFriendSound()) {
+                        if (ModConfig.INSTANCE.shouldPlayFriendSound() && MinecraftClient.getInstance().player != null) {
                             MinecraftClient.getInstance().player.playSound(FRIEND_SOUND, SoundCategory.MASTER, 1F, 1F);
                         }
                     }
@@ -67,18 +66,28 @@ public class ChatMixin {
         if (ModConfig.INSTANCE.shouldPlayMentionSound()) {
             if (MinecraftClient.getInstance().player != null) {
                 String username = MinecraftClient.getInstance().getSession().getUsername();
-
-                Pattern pattern = Pattern.compile("^.. \\w{1,16}: ?.*" + username + ".*");
-                // if message contains username but not at the beginning of the message
-                // play sound
-                if (pattern.matcher(message.getString()).find()) {
-
+                if (message.getString().matches("^.. \\w{1,16}: ?.*" + username + ".*")) {
                     MinecraftClient.getInstance().player.playSound(MENTION_SOUND, SoundCategory.MASTER, 1F,1F);
                 }
-                // TODO: work out a way to color the username without causing a crash
-                //message = Text.of(pattern.matcher(message.getString()).replaceAll(ModConfig.INSTANCE.chatMentionColor + "$1§r"));
-
             }
+        }
+
+        // Quest Completion
+        if (ModConfig.INSTANCE.questCompleteOptions != ConfigInstance.POPUP_NOTIFICATION_OPTIONS.OFF) {
+            if (message.getString().matches("^\\(.\\) Quest complete: (.*)")){
+                Pattern pattern = Pattern.compile("^\\(.\\) Quest complete: (.*)");
+                String questName = pattern.matcher(message.getString()).replaceFirst("$1");
+                if (questName != null) {
+                    if (ModConfig.INSTANCE.shouldShowQuestPopup()) {
+                        ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
+                        McciToast.add(toastManager, McciToast.Type.QUEST_COMPLETE, Text.of(questName));
+                    }
+                    if (ModConfig.INSTANCE.shouldPlayQuestSound() && MinecraftClient.getInstance().player != null) {
+                        MinecraftClient.getInstance().player.playSound(QUEST_COMPLETE_SOUND, SoundCategory.MASTER, 1F, 1F);
+                    }
+                }
+            }
+
         }
 
         // Other notifiations
