@@ -98,7 +98,8 @@ public class McciToast implements Toast {
     public enum Type {
         UPDATE("New Update!", 0),
         FRIEND_JOIN("Friend Joined!", 32),
-        FRIEND_LEAVE("Friend Left!", 32);
+        FRIEND_LEAVE("Friend Left!", 32),
+        QUEST_COMPLETE("Quest Completed!", 64);
 
         final String title;
         final int v;
