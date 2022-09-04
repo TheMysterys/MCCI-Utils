@@ -15,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 public class McciUtils implements ModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger("MCCI Utils");
-    public static ServerInfo mcci = new ServerInfo("MCC Island", "mccisland.net", false);
     public static boolean hasInitialized = false;
     public static String modVersion = String.valueOf(FabricLoader.getInstance().getModContainer("mcciutils").get().getMetadata().getVersion());
 
@@ -35,9 +34,6 @@ public class McciUtils implements ModInitializer {
 
         //Start Discord IPC.
         DiscordRP.startRP();
-
-        //Set Resource Pack Policy for MCC Island to Enabled as MCC Island requires a resource pack.
-        mcci.setResourcePackPolicy(ServerInfo.ResourcePackPolicy.ENABLED);
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> RegisterCommands.register(dispatcher));
 
