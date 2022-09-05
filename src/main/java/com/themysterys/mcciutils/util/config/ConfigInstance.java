@@ -24,16 +24,18 @@ public class ConfigInstance {
         chatMentionColor = COLOR_OPTIONS.YELLOW;
         // Quest Complete
         questCompleteOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
+        // Achievement Unlocks
+        achievementUnlockOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
 
     }
 
     public enum RPCustomDetails {
 
-        IP("ServerIP"),
-        USERNAME("Username"),
-        MOD_VERSION("Mod Version");
+        IP,
+        USERNAME,
+        MOD_VERSION;
 
-        RPCustomDetails(String option) {}
+        RPCustomDetails() {}
     }
 
     public enum POPUP_NOTIFICATION_OPTIONS {
