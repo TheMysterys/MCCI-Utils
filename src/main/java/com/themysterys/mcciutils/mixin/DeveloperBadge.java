@@ -30,7 +30,7 @@ public class DeveloperBadge {
                 for (Text value : name.getSiblings()) {
                     if (value.getString().contains("TheMysterys")) {
                         newName.append(value).append(Text.literal("\uE07D").setStyle(Style.EMPTY.withFont(new Identifier("mcc:icon"))).formatted(Formatting.WHITE));
-                    } else {
+                    } else if (!value.getString().contains("....")){
                         newName.append(value);
                     }
                 }
