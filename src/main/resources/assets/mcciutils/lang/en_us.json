@@ -2,8 +2,7 @@
     "key.category.mcciutils": "MCCI Utils",
 
     "mcciutils.category.discord": "Discord Status",
-    "mcciutils.category.friendNotifications": "Friend Notifications",
-    "mcciutils.category.chatMention": "Chat Mention",
+    "mcciutils.category.notifications": "Notifications",
 
     "mcciutils.config.enableDiscordStatus": "Toggle Discord Status",
     "mcciutils.config.enableDiscordStatus.line1": "Toggles the Discord Status on and off.",
@@ -26,6 +25,16 @@
     "mcciutils.config.enableChatMentions.line3": "OFF: Disables chat mentions",
 
     "mcciutils.config.chatMentionColor": "Chat Mention Color",
-    "mcciutils.config.chatMentionColor.line1": "Changes the color of the chat mention"
+    "mcciutils.config.chatMentionColor.line1": "Changes the color of the chat mention",
+
+    "mcciutils.config.questNotificationOptions": "Toggle Quest Notifications",
+    "mcciutils.config.questNotificationOptions.line1": "POPUP: Shows a popup when a quest is completed",
+    "mcciutils.config.questNotificationOptions.line2": "SOUND: Plays a sound when a quest is completed",
+    "mcciutils.config.questNotificationOptions.line3": "OFF: Disables quest notifications",
+
+    "mcciutils.config.achievementNotificationOptions": "Toggle Achievement Notifications",
+    "mcciutils.config.achievementNotificationOptions.line1": "POPUP: Shows a popup when an achievement is unlocked",
+    "mcciutils.config.achievementNotificationOptions.line2": "SOUND: Plays a sound when an achievement is unlocked",
+    "mcciutils.config.achievementNotificationOptions.line3": "OFF: Disables achievement notifications"
 
 }
