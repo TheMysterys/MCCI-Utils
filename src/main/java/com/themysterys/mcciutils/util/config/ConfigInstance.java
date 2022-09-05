@@ -11,6 +11,7 @@ public class ConfigInstance {
     public COLOR_OPTIONS chatMentionColor;
 
     public POPUP_NOTIFICATION_OPTIONS questCompleteOptions;
+    public POPUP_NOTIFICATION_OPTIONS achievementUnlockOptions;
 
     public ConfigInstance() {
         // Status

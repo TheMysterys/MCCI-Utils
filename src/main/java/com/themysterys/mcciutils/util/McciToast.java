@@ -3,7 +3,6 @@ package com.themysterys.mcciutils.util;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.toast.SystemToast;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.client.util.math.MatrixStack;
@@ -99,7 +98,8 @@ public class McciToast implements Toast {
         UPDATE("New Update!", 0),
         FRIEND_JOIN("Friend Joined!", 32),
         FRIEND_LEAVE("Friend Left!", 32),
-        QUEST_COMPLETE("Quest Completed!", 64);
+        QUEST_COMPLETE("Quest Completed!", 64),
+        ACHIEVEMENT_UNLOCKED("Achievement Unlocked!", 96);
 
         final String title;
         final int v;

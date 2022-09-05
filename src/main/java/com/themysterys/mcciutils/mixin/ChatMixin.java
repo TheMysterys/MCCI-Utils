@@ -83,7 +83,25 @@ public class ChatMixin {
                         McciToast.add(toastManager, McciToast.Type.QUEST_COMPLETE, Text.of(questName));
                     }
                     if (ModConfig.INSTANCE.shouldPlayQuestSound() && MinecraftClient.getInstance().player != null) {
-                        MinecraftClient.getInstance().player.playSound(QUEST_COMPLETE_SOUND, SoundCategory.MASTER, 1F, 1F);
+                        MinecraftClient.getInstance().player.playSound(UNLOCK_SOUND, SoundCategory.MASTER, 1F, 1F);
+                    }
+                }
+            }
+
+        }
+
+        // Achievement Completion
+        if (ModConfig.INSTANCE.questCompleteOptions != ConfigInstance.POPUP_NOTIFICATION_OPTIONS.OFF) {
+            if (message.getString().matches("^\\(.\\) Achievement unlocked: \\[(.*)]")){
+                Pattern pattern = Pattern.compile("^\\(.\\) Achievement unlocked: \\[(.*)]");
+                String achievementName = pattern.matcher(message.getString()).replaceFirst("$1");
+                if (achievementName != null) {
+                    if (ModConfig.INSTANCE.shouldShowQuestPopup()) {
+                        ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
+                        McciToast.add(toastManager, McciToast.Type.ACHIEVEMENT_UNLOCKED, Text.of(achievementName));
+                    }
+                    if (ModConfig.INSTANCE.shouldPlayQuestSound() && MinecraftClient.getInstance().player != null) {
+                        MinecraftClient.getInstance().player.playSound(UNLOCK_SOUND, SoundCategory.MASTER, 1F, 1F);
                     }
                 }
             }
