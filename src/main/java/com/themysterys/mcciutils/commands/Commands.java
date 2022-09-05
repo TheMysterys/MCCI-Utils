@@ -15,6 +15,7 @@ public class Commands {
         dispatcher.register(literal("commands").executes(ctx -> {
             if (!McciUtils.isOnMCCI()) {
                 ctx.getSource().sendError(Text.of("You are not on MCC Island!"));
+                return 1;
             }
             AdvancementsScreen advancementsScreen = new AdvancementsScreen(ctx.getSource().getPlayer().networkHandler.getAdvancementHandler());
             ctx.getSource().getClient().send(() -> ctx.getSource().getClient().setScreen(advancementsScreen));
