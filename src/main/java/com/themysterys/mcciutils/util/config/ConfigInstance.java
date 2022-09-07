@@ -13,6 +13,8 @@ public class ConfigInstance {
     public POPUP_NOTIFICATION_OPTIONS questCompleteOptions;
     public POPUP_NOTIFICATION_OPTIONS achievementUnlockOptions;
 
+    public SPAM_OPTIONS stackSpam;
+
     public ConfigInstance() {
         // Status
         enableDiscordStatus = true;
@@ -26,6 +28,9 @@ public class ConfigInstance {
         questCompleteOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
         // Achievement Unlocks
         achievementUnlockOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
+
+        // Spam chat
+        stackSpam = SPAM_OPTIONS.CONSECUTIVE;
 
     }
 
@@ -76,6 +81,13 @@ public class ConfigInstance {
         public Formatting getColor() {
             return formatting;
         }
+    }
+
+    public enum SPAM_OPTIONS {
+        CONSECUTIVE,
+        ALL,
+        OFF;
+        SPAM_OPTIONS() {}
     }
 
     // Config checks

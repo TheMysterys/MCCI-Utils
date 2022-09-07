@@ -3,6 +3,7 @@
 
     "mcciutils.category.discord": "Discord Status",
     "mcciutils.category.notifications": "Notifications",
+    "mcciutils.category.chat": "Chat",
 
     "mcciutils.config.enableDiscordStatus": "Toggle Discord Status",
     "mcciutils.config.enableDiscordStatus.line1": "Toggles the Discord Status on and off.",
@@ -11,7 +12,7 @@
     "mcciutils.config.customDetails": "Change details",
     "mcciutils.config.customDetails.line1": "IP: Displays the server IP",
     "mcciutils.config.customDetails.line2": "USERNAME: Shows the username of the player",
-    "mcciutils.config.customDetails.line3": "MODVERSION: Shows the version of the mod",
+    "mcciutils.config.customDetails.line3": "MOD_VERSION: Shows the version of the mod",
     "mcciutils.config.customDetails.line4": "You will need to switch lobbies for status to update.",
 
     "mcciutils.config.friendNotificationOptions": "Toggle Friend Notifications",
@@ -35,6 +36,11 @@
     "mcciutils.config.achievementNotificationOptions": "Toggle Achievement Notifications",
     "mcciutils.config.achievementNotificationOptions.line1": "POPUP: Shows a popup when an achievement is unlocked",
     "mcciutils.config.achievementNotificationOptions.line2": "SOUND: Plays a sound when an achievement is unlocked",
-    "mcciutils.config.achievementNotificationOptions.line3": "OFF: Disables achievement notifications"
+    "mcciutils.config.achievementNotificationOptions.line3": "OFF: Disables achievement notifications",
+
+    "mcciutils.config.stackSpam": "Toggle Spam Stacking",
+    "mcciutils.config.stackSpam.line1": "CONSECUTIVE: Stacks consecutive duplicate messages",
+    "mcciutils.config.stackSpam.line2": "ALL: Stacks all duplicate messages",
+    "mcciutils.config.stackSpam.line3": "OFF: Disables stacking of duplicate messages"
 
 }

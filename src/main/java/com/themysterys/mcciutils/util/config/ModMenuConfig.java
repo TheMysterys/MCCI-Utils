@@ -58,28 +58,6 @@ public class ModMenuConfig implements ModMenuApi {
         );
 
         notificationCategory.addEntry(configBuilder.entryBuilder()
-                .startEnumSelector(Text.translatable("mcciutils.config.enableChatMentions"), ConfigInstance.CHAT_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.chatMentions)
-                .setDefaultValue(ConfigInstance.CHAT_NOTIFICATION_OPTIONS.BOTH)
-                .setTooltip(
-                        Text.translatable("mcciutils.config.enableChatMentions.line1"),
-                        Text.translatable("mcciutils.config.enableChatMentions.line2"),
-                        Text.translatable("mcciutils.config.enableChatMentions.line3")
-                )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentions = val)
-                .build()
-        );
-
-        notificationCategory.addEntry(configBuilder.entryBuilder()
-                .startEnumSelector(Text.translatable("mcciutils.config.chatMentionColor"), ConfigInstance.COLOR_OPTIONS.class, ModConfig.INSTANCE.chatMentionColor)
-                .setDefaultValue(ConfigInstance.COLOR_OPTIONS.YELLOW)
-                .setTooltip(
-                        Text.translatable("mcciutils.config.chatMentionColor.line1")
-                )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentionColor = val)
-                .build()
-        );
-
-        notificationCategory.addEntry(configBuilder.entryBuilder()
                 .startEnumSelector(Text.translatable("mcciutils.config.questNotificationOptions"), ConfigInstance.POPUP_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.questCompleteOptions)
                 .setDefaultValue(ConfigInstance.POPUP_NOTIFICATION_OPTIONS.BOTH)
                 .setTooltip(
@@ -100,6 +78,42 @@ public class ModMenuConfig implements ModMenuApi {
                         Text.translatable("mcciutils.config.achievementNotificationOptions.line3")
                 )
                 .setSaveConsumer(val -> ModConfig.INSTANCE.achievementUnlockOptions = val)
+                .build()
+        );
+
+        ConfigCategory chatCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.chat"));
+
+        chatCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.enableChatMentions"), ConfigInstance.CHAT_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.chatMentions)
+                .setDefaultValue(ConfigInstance.CHAT_NOTIFICATION_OPTIONS.BOTH)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.enableChatMentions.line1"),
+                        Text.translatable("mcciutils.config.enableChatMentions.line2"),
+                        Text.translatable("mcciutils.config.enableChatMentions.line3")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentions = val)
+                .build()
+        );
+
+        chatCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.chatMentionColor"), ConfigInstance.COLOR_OPTIONS.class, ModConfig.INSTANCE.chatMentionColor)
+                .setDefaultValue(ConfigInstance.COLOR_OPTIONS.YELLOW)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.chatMentionColor.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.chatMentionColor = val)
+                .build()
+        );
+
+        chatCategory.addEntry(configBuilder.entryBuilder()
+                .startEnumSelector(Text.translatable("mcciutils.config.stackSpam"), ConfigInstance.SPAM_OPTIONS.class, ModConfig.INSTANCE.stackSpam)
+                .setDefaultValue(ConfigInstance.SPAM_OPTIONS.CONSECUTIVE)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.stackSpam.line1"),
+                        Text.translatable("mcciutils.config.stackSpam.line2"),
+                        Text.translatable("mcciutils.config.stackSpam.line3")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.stackSpam = val)
                 .build()
         );
 
