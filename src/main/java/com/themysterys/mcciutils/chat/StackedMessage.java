@@ -41,7 +41,7 @@ public class StackedMessage {
                 .copyContentOnly()
                 .setStyle(OCCURRENCES_STYLE);
 
-        var content = originalMessage.copyContentOnly();
+        var content = originalMessage.copy();
         if (content.getString().isEmpty()) {
             content = originalMessage.copy();
         }
