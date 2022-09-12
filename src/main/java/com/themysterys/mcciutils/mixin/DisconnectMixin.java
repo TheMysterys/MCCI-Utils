@@ -14,7 +14,7 @@ public class DisconnectMixin {
     @Inject(at = @At("HEAD"), method = "disconnect")
     private void disconnect(Text disconnectReason, CallbackInfo ci) {
         if (disconnectReason.getString().equals("Quitting")) {
-            DiscordRP.closeRP();
+            DiscordRP.disconnect();
         }
     }
 }
