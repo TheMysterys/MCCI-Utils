@@ -1,101 +1,109 @@
 package com.themysterys.mcciutils.util.discord;
 
-import com.jagrosh.discordipc.IPCClient;
-import com.jagrosh.discordipc.IPCListener;
-import com.jagrosh.discordipc.entities.RichPresence;
-import com.jagrosh.discordipc.exceptions.NoDiscordClientException;
 import com.themysterys.mcciutils.McciUtils;
 import com.themysterys.mcciutils.util.config.ModConfig;
+import de.jcm.discordgamesdk.Core;
+import de.jcm.discordgamesdk.CreateParams;
+import de.jcm.discordgamesdk.GameSDKException;
+import de.jcm.discordgamesdk.activity.Activity;
 import net.minecraft.client.MinecraftClient;
 
-import java.time.OffsetDateTime;
+import java.time.Instant;
 
 
 public class DiscordRP {
-    static final IPCClient client = new IPCClient(1012500697880731708L);
-    static RichPresence.Builder builder = new RichPresence.Builder();
-    public static boolean hasRPStarted = false;
-    public static boolean isRPRunning = false;
-    public static int discordRPErrorcode = 0;
-    //0 = Normal State, 1 = Error, 2 = MacOS
 
-    public static void startRP() {
-        if (!MinecraftClient.IS_SYSTEM_MAC) {
+    public static Core discordRPC;
+    public static boolean enabled = false;
+    static Instant time = Instant.now();
+    static boolean initializedRpc = false;
+    static boolean sent = true;
+    static boolean triedReconnect = false;
+
+    public static void initializeRpc() {
+        if (!initializedRpc && McciUtils.isOnMCCI()) {
+            initializedRpc = true;
+            CreateParams params = new CreateParams();
+            params.setClientID(1012500697880731708L);
+            params.setFlags(CreateParams.Flags.NO_REQUIRE_DISCORD);
             try {
-                setup();
+                discordRPC = new Core(params);
+                McciUtils.LOGGER.info("Discord RPC initialized");
+                enabled = true;
+                Thread callbacks = new Thread(() -> {
+                    while (enabled) {
+                        discordRPC.runCallbacks();
+                        try {
+                            Thread.sleep(16);//run callbacks at 60fps
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    Thread.currentThread().interrupt();
+                });
+                callbacks.start();
             } catch (Exception e) {
-                McciUtils.LOGGER.error("Failed to start rich presence, Your Device/Install may not support rich presence!");
-                e.printStackTrace();
-                discordRPErrorcode = 1;
-            }
-        } else {
-            McciUtils.LOGGER.error("Rich Presence doesn't support macOS.");
-            discordRPErrorcode = 2;
-        }
-    }
-
-    public static void updateStatus(String state, String details) {
-        // Make sure there are no errors before updating status.
-        if (discordRPErrorcode != 0) return;
-
-        // Setup status client if it has been closed and toggled on.
-        if (!isRPRunning && ModConfig.INSTANCE.enableDiscordStatus) {
-            setup();
-        }
-
-        // Close status if toggled off and is running.
-        if (isRPRunning && !ModConfig.INSTANCE.enableDiscordStatus) {
-            closeRP();
-        } else {
-            // Update status.
-            try {
-                builder.setState(state)
-                        .setDetails(details)
-                        .setStartTimestamp(OffsetDateTime.now())
-                        .setLargeImage("logo", "play.mccisland.net")
-                        .addButton("Get MCCI Utils", "https://modrinth.com/mod/mcci-utils");
-                client.sendRichPresence(builder.build());
-            } catch (IllegalStateException e) {
-                McciUtils.LOGGER.error("IPC not connected! Attempting to reconnect IPC");
-                connectClient();
+                McciUtils.LOGGER.info("[WARN] An error occurred while trying to start the core, is Discord running?");
+                enabled = false;
+                sent = false;
             }
         }
     }
 
-    public static void closeRP() {
-        if(isRPRunning) {
-            client.close();
-            isRPRunning = false;
-            McciUtils.LOGGER.info("MCCI Rich Presence has been closed!");
+    public static void updateRPC(String location) {
+        if (!initializedRpc) {
+            initializeRpc();
         }
-    }
+        try (Activity activity = new Activity()) {
+            activity.setDetails(Defaults.defaultDetails());
+            activity.setState(location);
+            activity.assets().setLargeImage("logo");
+            activity.assets().setLargeText("MCCI Utils");
+            activity.timestamps().setStart(Instant.ofEpochSecond(time.toEpochMilli()));
+            discordRPC.activityManager().updateActivity(activity);
 
-    private static void setup(){
-        DiscordRP.client.setListener(new IPCListener(){
-            @Override
-            public void onReady(IPCClient client)
-            {
-                hasRPStarted = true;
-                isRPRunning = true;
-                McciUtils.LOGGER.info("MCCI Rich presence Ready!");
-            }
-        });
-        connectClient();
-    }
-
-    public static void connectClient(){
-        try {
-            client.connect();
-        } catch (NoDiscordClientException e) {
-            McciUtils.LOGGER.error("Unable To Connect To Discord Client");
+            triedReconnect = false;
+        } catch (Exception e) {
             e.printStackTrace();
+            if (!triedReconnect)
+                reconnect();
+            else
+                try {
+                    enabled = false;
+                    discordRPC.close();
+                } catch (Throwable ignored) {
+                }
         }
     }
 
-    public static class Defaults{
-        //This nested class stores all of the default items for Rich Presence
+    public static void reconnect() {
+        triedReconnect = true;
+        McciUtils.LOGGER.info("Trying to reconnect to Discord RPC");
+        try {
+            enabled = false;
+            discordRPC.close();
+        } catch (Throwable ignored) {
+        }
+        initializeRpc();
+    }
 
-        public static String defaultDetails(){
+    public static void disconnect() {
+        initializedRpc = false;
+        McciUtils.LOGGER.info("Disconnecting from Discord RPC");
+        if (enabled) {
+            try {
+                discordRPC.close();
+            } catch (GameSDKException e) {
+                e.printStackTrace();
+            }
+            enabled = false;
+        }
+    }
+
+    public static class Defaults {
+        //This nested class stores all the default items for Rich Presence
+
+        public static String defaultDetails() {
             return switch (ModConfig.INSTANCE.customDetails) {
                 case IP -> "IP: play.mccisland.net";
                 case USERNAME -> "Playing as " + MinecraftClient.getInstance().getSession().getUsername();
