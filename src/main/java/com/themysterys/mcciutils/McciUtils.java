@@ -3,7 +3,7 @@ package com.themysterys.mcciutils;
 import com.themysterys.mcciutils.chat.StackedMessage;
 import com.themysterys.mcciutils.commands.RegisterCommands;
 import com.themysterys.mcciutils.util.config.ModConfig;
-import com.themysterys.mcciutils.util.discord.DiscordRP;
+import com.themysterys.mcciutils.util.discord.DiscordCore;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
@@ -11,6 +11,7 @@ import net.minecraft.client.MinecraftClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,7 +39,11 @@ public class McciUtils implements ModInitializer {
         ModConfig.init();
 
         //Start Discord IPC.
-        DiscordRP.startRP();
+        try {
+            DiscordCore.init();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> RegisterCommands.register(dispatcher));
 
