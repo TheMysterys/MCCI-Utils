@@ -15,7 +15,7 @@ public class DiscordRP {
 
     public static Core discordRPC;
     public static boolean enabled = false;
-    static Instant time = Instant.now();
+    static Instant time;
     static boolean initializedRpc = false;
     static boolean sent = true;
     static boolean triedReconnect = false;
@@ -26,6 +26,7 @@ public class DiscordRP {
             CreateParams params = new CreateParams();
             params.setClientID(1012500697880731708L);
             params.setFlags(CreateParams.Flags.NO_REQUIRE_DISCORD);
+            time = Instant.now();
             try {
                 discordRPC = new Core(params);
                 McciUtils.LOGGER.info("Discord RPC initialized");
