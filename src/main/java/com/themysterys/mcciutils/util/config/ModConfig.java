@@ -13,7 +13,8 @@ import com.google.gson.JsonSyntaxException;
 
 public class ModConfig {
 
-    private static final File folder = new File("config");
+    private static final File folder = new File("config/MCCI-Utils");
+    private static final File legacyFolder = new File("config");
     private static File configFile;
     private static final Gson config = new GsonBuilder().setPrettyPrinting().create();
     public static ConfigInstance INSTANCE;
@@ -39,18 +40,18 @@ public class ModConfig {
         if (folder.isDirectory()) {
             configFile = new File(folder, "mcciutils.json");
 
-            File legacyConfigFile = new File(folder, "mcciutils.config");
+            File legacyConfigFile = new File(legacyFolder, "mcciutils.json");
             if (legacyConfigFile.exists() && legacyConfigFile.isFile() && ! configFile.exists()) {
                 if (!legacyConfigFile.renameTo(configFile)) {
-                    System.err.format("Could not rename legacy config file %s to %s\n", legacyConfigFile.getAbsolutePath(), configFile.getAbsolutePath());
+                    System.err.format("[MCCI Utils] Could not rename legacy config file %s to %s\n", legacyConfigFile.getAbsolutePath(), configFile.getAbsolutePath());
                 } else {
-                    System.out.println("Successfully converted legacy config file");
+                    System.out.println("[MCCI Utils] Successfully converted legacy config file");
                 }
             }
 
 
             if (!configFile.exists()) {
-                System.out.println("Creating new config file");
+                System.out.println("[MCCI Utils] Creating new config file");
                 try {
                     configFile.createNewFile();
                     loadDefaults();
@@ -59,13 +60,13 @@ public class ModConfig {
                     writer.write(json);
                     writer.close();
                 } catch (IOException e) {
-                    throw new IllegalStateException("Can't create config file", e);
+                    throw new IllegalStateException("[MCCI Utils] Can't create config file", e);
                 }
             } else if (configFile.isDirectory()) {
-                throw new IllegalStateException("'mcciutils.json' must be a file!");
+                throw new IllegalStateException("[MCCI Utils] 'mcciutils.json' must be a file!");
             }
         } else {
-            throw new IllegalStateException("'config' must be a folder!");
+            throw new IllegalStateException("[MCCI Utils] 'config/MCCI-Utils' must be a folder!");
         }
     }
 
@@ -73,10 +74,10 @@ public class ModConfig {
         try {
             INSTANCE = config.fromJson(new FileReader(configFile), ConfigInstance.class);
             if (INSTANCE == null) {
-                throw new IllegalStateException("Null configuration");
+                throw new IllegalStateException("[MCCI Utils] Null configuration");
             }
         } catch (JsonSyntaxException e) {
-            System.err.println("Invalid configuration!");
+            System.err.println("[MCCI Utils] Invalid configuration!");
             e.printStackTrace();
         } catch (JsonIOException e) {
             e.printStackTrace();
@@ -92,7 +93,7 @@ public class ModConfig {
             writer.write(json);
             writer.close();
         } catch (IOException e) {
-            throw new IllegalStateException("Can't update config file", e);
+            throw new IllegalStateException("[MCCI Utils] Can't update config file", e);
         }
     }
 
