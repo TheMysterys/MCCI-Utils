@@ -11,9 +11,9 @@ public class LocationID {
     }
 
     public static void sendPresence(){
-        String state = generateStateString();
-        if(!state.equals("")){
-            DiscordRP.updateStatus(state, DiscordRP.Defaults.defaultDetails());
+        String locationString = generateStateString();
+        if(!locationString.equals("")){
+            DiscordRP.updateRPC(locationString);
         }
     }
 
