@@ -1,6 +1,6 @@
 plugins {
-    id 'fabric-loom' version '0.13-SNAPSHOT'
-    id 'maven-publish'
+    id "fabric-loom" version "0.13-SNAPSHOT"
+    id "maven-publish"
 }
 
 version = project.mod_version
@@ -16,7 +16,7 @@ repositories {
     mavenCentral()
     maven { url "https://maven.shedaniel.me/" }
     maven { url "https://maven.terraformersmc.com" }
-    maven { url 'https://jitpack.io' }
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -28,9 +28,10 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    implementation "com.github.Jarva:DiscordIPC:7ac9ac8814"
-    include("com.github.Jarva:DiscordIPC:7ac9ac8814")
-    implementation 'org.json:json:20211205'
+    implementation("com.github.JnCrMx:discord-game-sdk4j:0.5.5")
+    include("com.github.JnCrMx:discord-game-sdk4j:0.5.5")
+
+    implementation "org.json:json:20211205"
     include("org.json:json:20211205")
 
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_version}") {
