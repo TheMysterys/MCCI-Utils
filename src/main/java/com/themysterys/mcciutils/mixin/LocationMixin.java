@@ -31,6 +31,7 @@ public class LocationMixin {
                     return;
                 }
             }
+            LocationID.sendPresence();
         }
     }
 
