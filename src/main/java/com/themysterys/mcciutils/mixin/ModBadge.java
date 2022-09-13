@@ -14,8 +14,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PlayerListHud.class)
-public class DeveloperBadge {
-
+public class ModBadge {
 
     @Inject(at = @At("RETURN"), method = "getPlayerName", cancellable = true)
     public void getDisplayName(CallbackInfoReturnable<Text> cir) {
