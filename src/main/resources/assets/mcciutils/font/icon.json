@@ -1,0 +1,13 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mcciutils:gui/mod_icon.png",
+      "chars": [
+        "\uEFEF"
+      ],
+      "ascent": 7,
+      "height": 7
+    }
+  ]
+}
