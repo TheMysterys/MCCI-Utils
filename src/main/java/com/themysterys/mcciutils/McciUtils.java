@@ -4,6 +4,7 @@ import com.themysterys.mcciutils.chat.StackedMessage;
 import com.themysterys.mcciutils.commands.RegisterCommands;
 import com.themysterys.mcciutils.util.config.ModConfig;
 import com.themysterys.mcciutils.util.discord.DiscordCore;
+import com.themysterys.mcciutils.util.websockets.WebsocketCore;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
@@ -44,6 +45,8 @@ public class McciUtils implements ModInitializer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        WebsocketCore.init();
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> RegisterCommands.register(dispatcher));
 
