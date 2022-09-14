@@ -1,0 +1,46 @@
+{
+    "key.category.mcciutils": "MCCI Utils",
+
+    "mcciutils.category.discord": "Статус Discord",
+    "mcciutils.category.notifications": "Уведомления",
+    "mcciutils.category.chat": "Чат",
+
+    "mcciutils.config.enableDiscordStatus": "Переключить статус Discord",
+    "mcciutils.config.enableDiscordStatus.line1": "Включает и выключает статус Discord.",
+    "mcciutils.config.enableDiscordStatus.line2": "Вам нужно будет сменить лобби для обновления статуса.",
+
+    "mcciutils.config.customDetails": "Сменить детали",
+    "mcciutils.config.customDetails.line1": "IP: Показывает IP сервер",
+    "mcciutils.config.customDetails.line2": "НИКНЕЙМ: Показывает никнейм игрока",
+    "mcciutils.config.customDetails.line3": "ВЕРСИЯ: Показывает версию мода",
+    "mcciutils.config.customDetails.line4": "Вам нужно будет сменить лобби для обновления статуса.",
+
+    "mcciutils.config.friendNotificationOptions": "Уведомление о друзьях",
+    "mcciutils.config.friendNotificationOptions.line1": "ОКНО: Показывает всплывающее окно, когда друг входит/выходит",
+    "mcciutils.config.friendNotificationOptions.line2": "ЗВУК: Воспроизводит звук, когда друг входит/выходит",
+    "mcciutils.config.friendNotificationOptions.line3": "ВЫКЛ: Отключает уведомления о друзьях",
+
+    "mcciutils.config.enableChatMentions": "Упоминание в Чате",
+    "mcciutils.config.enableChatMentions.line1": "ЦВЕТ: Colors the username in chat when mentioned",
+    "mcciutils.config.enableChatMentions.line2": "ЗВУК: Plays a sound when you are mentioned in chat",
+    "mcciutils.config.enableChatMentions.line3": "ВЫКЛ: Disables chat mentions",
+
+    "mcciutils.config.chatMentionColor": "Цвет упоминания в чате",
+    "mcciutils.config.chatMentionColor.line1": "Изменяет цвет упоминания в чате",
+
+    "mcciutils.config.questNotificationOptions": "Уведомления по квестам",
+    "mcciutils.config.questNotificationOptions.line1": "ОКНО: Показывает всплывающее окно, когда квест завершён",
+    "mcciutils.config.questNotificationOptions.line2": "ЗВУК: Воспроизводит звук, когда квест завершён",
+    "mcciutils.config.questNotificationOptions.line3": "ВЫКЛ: Отключает уведомления о квестах",
+
+    "mcciutils.config.achievementNotificationOptions": "Уведомления по достижениям",
+    "mcciutils.config.achievementNotificationOptions.line1": "ОКНО: Shows a popup when an achievement is unlocked",
+    "mcciutils.config.achievementNotificationOptions.line2": "ЗВУК: Воспроизводит звук при разблокировке достижения",
+    "mcciutils.config.achievementNotificationOptions.line3": "ВЫКЛ: Отключает уведомления о достижениях",
+
+    "mcciutils.config.stackSpam": "Стак спама",
+    "mcciutils.config.stackSpam.line1": "ПОСЛЕДОВАТЕЛЬНЫЙ: Стакает последовательные повторяющиеся сообщения",
+    "mcciutils.config.stackSpam.line2": "ВСЕ: Стакает все повторяющиеся сообщения",
+    "mcciutils.config.stackSpam.line3": "ВЫКЛ: Отключает стак повторяющихся сообщений"
+
+}
