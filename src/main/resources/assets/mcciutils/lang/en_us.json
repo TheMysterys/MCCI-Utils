@@ -41,6 +41,9 @@
     "mcciutils.config.stackSpam": "Toggle Spam Stacking",
     "mcciutils.config.stackSpam.line1": "CONSECUTIVE: Stacks consecutive duplicate messages",
     "mcciutils.config.stackSpam.line2": "ALL: Stacks all duplicate messages",
-    "mcciutils.config.stackSpam.line3": "OFF: Disables stacking of duplicate messages"
+    "mcciutils.config.stackSpam.line3": "OFF: Disables stacking of duplicate messages",
+    
+    "mccutils.discord.playstext": "Playing as ",
+    "mccutils.discord.modver": "Using Version v"
 
 }
