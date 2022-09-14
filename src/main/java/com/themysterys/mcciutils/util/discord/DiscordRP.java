@@ -19,11 +19,11 @@ public class DiscordRP {
     static boolean initializedRpc = false;
     static boolean sent = true;
     static boolean triedReconnect = false;
-    static TranslatableText playstext = new TranslatableText("mccutils.discord.plays");
-    static TranslatableText modvtext = new TranslatableText("mccutils.discord.modver");
     
 
     public static void initializeRpc() {
+        new TranslatableText("mccutils.discord.plays");
+        new TranslatableText("mccutils.discord.modver");
         if (!initializedRpc && McciUtils.isOnMCCI()) {
             initializedRpc = true;
             CreateParams params = new CreateParams();
@@ -110,8 +110,8 @@ public class DiscordRP {
         public static String defaultDetails() {
             return switch (ModConfig.INSTANCE.customDetails) {
                 case IP -> "IP: play.mccisland.net";
-                case USERNAME -> playstext + MinecraftClient.getInstance().getSession().getUsername();
-                case MOD_VERSION -> modvtext + McciUtils.modVersion;
+                case USERNAME -> Text.translatable("mccutils.discord.plays") + MinecraftClient.getInstance().getSession().getUsername();
+                case MOD_VERSION -> Text.translatable("mccutils.discord.modver") + McciUtils.modVersion;
             };
         }
     }
