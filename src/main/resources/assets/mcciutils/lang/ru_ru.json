@@ -10,7 +10,7 @@
     "mcciutils.config.enableDiscordStatus.line2": "Вам нужно будет сменить лобби для обновления статуса.",
 
     "mcciutils.config.customDetails": "Сменить детали",
-    "mcciutils.config.customDetails.line1": "IP: Показывает IP сервер",
+    "mcciutils.config.customDetails.line1": "IP: Показывает IP сервера",
     "mcciutils.config.customDetails.line2": "НИКНЕЙМ: Показывает никнейм игрока",
     "mcciutils.config.customDetails.line3": "ВЕРСИЯ: Показывает версию мода",
     "mcciutils.config.customDetails.line4": "Вам нужно будет сменить лобби для обновления статуса.",
@@ -41,6 +41,9 @@
     "mcciutils.config.stackSpam": "Стак спама",
     "mcciutils.config.stackSpam.line1": "ПОСЛЕДОВАТЕЛЬНЫЙ: Стакает последовательные повторяющиеся сообщения",
     "mcciutils.config.stackSpam.line2": "ВСЕ: Стакает все повторяющиеся сообщения",
-    "mcciutils.config.stackSpam.line3": "ВЫКЛ: Отключает стак повторяющихся сообщений"
+    "mcciutils.config.stackSpam.line3": "ВЫКЛ: Отключает стак повторяющихся сообщений",
+    
+    "mccutils.discord.playstext": "Играет как ",
+    "mccutils.discord.modver": "Использует версию v"
 
 }
