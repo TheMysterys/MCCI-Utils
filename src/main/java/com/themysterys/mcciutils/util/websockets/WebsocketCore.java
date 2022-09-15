@@ -17,6 +17,7 @@ public class WebsocketCore {
     private static final String DEV_WEBSOCKET_URL = "ws://localhost:8080";
 
     private static int errorCount = 0;
+    private static boolean closed = false;
 
     public WebsocketCore() throws URISyntaxException {
         WebSocketClient client = new WebSocketClient(new URI(WEBSOCKET_URL), new Draft_6455()) {
@@ -33,6 +34,12 @@ public class WebsocketCore {
 
             @Override
             public void onMessage(String message) {
+                if (message.equals("Invalid UUID")) {
+                    McciUtils.LOGGER.error("Invalid UUID! Please restart Client!");
+                    McciUtils.LOGGER.info("Shutting down websocket.");
+                    closed = true;
+                    return;
+                }
                 // parse message to json
                 JsonElement jsonElement = JsonParser.parseString(message);
                 JsonArray jsonArray = jsonElement.getAsJsonArray();
@@ -50,13 +57,17 @@ public class WebsocketCore {
 
             @Override
             public void onClose(int code, String reason, boolean remote) {
+                if (closed) {
+                    return;
+                }
                 McciUtils.LOGGER.info("Reconnecting in " + (5 + (errorCount * 5)) + " seconds...");
                 ModUsers.clear();
-                if (errorCount < 5) {
+                if (errorCount < 10) {
                     new Thread(() -> {
                         try {
                             // Wait 5 seconds and extend for each error after that
-                            Thread.sleep(5000 + (errorCount * 5000L));
+                            // Continues up to a max of 50 seconds.
+                            Thread.sleep((5 + (errorCount * 5L)) * 1000);
                             this.reconnect();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -69,6 +80,9 @@ public class WebsocketCore {
 
             @Override
             public void onError(Exception ex) {
+                if (closed) {
+                    return;
+                }
                 McciUtils.LOGGER.error("Error while connecting to websocket server!");
                 System.out.println(ex.getMessage());
                 ModUsers.clear();
