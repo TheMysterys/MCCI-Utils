@@ -9,5 +9,6 @@ public class RegisterCommands {
         Goat.register(dispatcher);
         Commands.register(dispatcher);
         Yellow.register(dispatcher);
+        Discord.register(dispatcher);
     }
 }
