@@ -19,8 +19,10 @@ public class WebsocketCore {
     private static int errorCount = 0;
     private static boolean closed = false;
 
-    public WebsocketCore() throws URISyntaxException {
-        WebSocketClient client = new WebSocketClient(new URI(WEBSOCKET_URL), new Draft_6455()) {
+    private static WebSocketClient client;
+
+    private static void connect() throws URISyntaxException {
+        client = new WebSocketClient(new URI(WEBSOCKET_URL), new Draft_6455()) {
             @Override
             public void onOpen(ServerHandshake handshakedata) {
                 McciUtils.LOGGER.info("Connected to websocket server!");
@@ -93,10 +95,18 @@ public class WebsocketCore {
     }
 
     public static void init() {
-        try {
-            new WebsocketCore();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
+        if (client == null) {
+            try {
+                connect();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void reconnect() {
+        if (!client.isOpen()) {
+            client.reconnect();
         }
     }
 }
