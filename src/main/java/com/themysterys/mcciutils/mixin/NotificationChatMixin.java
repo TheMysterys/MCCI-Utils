@@ -4,6 +4,7 @@ import com.themysterys.mcciutils.McciUtils;
 import com.themysterys.mcciutils.util.McciToast;
 import com.themysterys.mcciutils.util.config.ConfigInstance;
 import com.themysterys.mcciutils.util.config.ModConfig;
+import com.themysterys.mcciutils.util.websockets.ModUsers;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.toast.ToastManager;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
+import static com.themysterys.mcciutils.util.chat.ModBadgeIcon.modBadge;
 import static com.themysterys.mcciutils.util.sounds.Sounds.*;
 
 @Mixin(ChatHud.class)
@@ -40,7 +42,11 @@ public class NotificationChatMixin {
                     if (name != null) {
                         if (ModConfig.INSTANCE.shouldShowFriendPopup()) {
                             ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
-                            McciToast.add(toastManager, McciToast.Type.FRIEND_JOIN, Text.of(name));
+                            MutableText nameText = Text.literal(name);
+                            if (ModUsers.containsUser(name)) {
+                                nameText.append(modBadge(name));
+                            }
+                            McciToast.add(toastManager, McciToast.Type.FRIEND_JOIN, nameText);
                         }
                         if (ModConfig.INSTANCE.shouldPlayFriendSound() && MinecraftClient.getInstance().player != null) {
                             MinecraftClient.getInstance().player.playSound(FRIEND_SOUND, SoundCategory.MASTER, 1F, 1F);
