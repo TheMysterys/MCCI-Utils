@@ -4,10 +4,8 @@ import com.themysterys.mcciutils.McciUtils;
 import com.themysterys.mcciutils.util.websockets.ModUsers;
 import net.minecraft.client.gui.hud.PlayerListHud;
 import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextContent;
-import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,6 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static com.themysterys.mcciutils.util.chat.ModBadgeIcon.modBadge;
 
 @Mixin(PlayerListHud.class)
 public class ModBadge {
@@ -39,7 +39,7 @@ public class ModBadge {
                 MutableText newName = MutableText.of(TextContent.EMPTY);
                 for (Text value : name.getSiblings()) {
                     if (value.getString().contains(username)) {
-                        newName.append(value).append(Text.literal("\uEFEF").setStyle(Style.EMPTY.withFont(new Identifier("mcciutils:icon"))).formatted(ModUsers.getRankColor(username)));
+                        newName.append(value).append(modBadge(username));
                     } else if (!value.getString().contains("....")){
                         newName.append(value);
                     }
