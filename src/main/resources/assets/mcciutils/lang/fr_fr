@@ -1,0 +1,51 @@
+// This translation was done by Eevee (ProbablyRose) [Chara#6102] and not JosTheDude
+// All credits to them!
+{
+    "key.category.mcciutils": "MCCI Utils",
+
+    "mcciutils.category.discord": "Status Discord",
+    "mcciutils.category.notifications": "Notifications",
+    "mcciutils.category.chat": "Chat",
+
+    "mcciutils.config.enableDiscordStatus": "Activer/Désactiver Statut Discord",
+    "mcciutils.config.enableDiscordStatus.line1": "Active ou désactive le statut Discord",
+    "mcciutils.config.enableDiscordStatus.line2": "Vous devrez changer de lobby pour mettre à jour le statut.",
+
+    "mcciutils.config.customDetails": "Modifier les détails",
+    "mcciutils.config.customDetails.line1": "IP: Affiche l'IP du serveur",
+    "mcciutils.config.customDetails.line2": "USERNAME: Affiche le pseudo du joueur",
+    "mcciutils.config.customDetails.line3": "MOD_VERSION: Affiche la version du mod",
+    "mcciutils.config.customDetails.line4": "Vous devrez changer de lobby pour mettre à jour le statut.",
+
+    "mcciutils.config.friendNotificationOptions": "Activer/Désactiver Notifications Amis",
+    "mcciutils.config.friendNotificationOptions.line1": "POPUP: Affiche une notification quand un(e) ami(e) se connecte ou déconnecte",
+    "mcciutils.config.friendNotificationOptions.line2": "SOUND: Joue un son quand un(e) ami(e) se connecte ou déconnecte",
+    "mcciutils.config.friendNotificationOptions.line3": "OFF: Désactive les notifications d'amis",
+
+    "mcciutils.config.enableChatMentions": "Activer/Désactiver Mention dans le Chat",
+    "mcciutils.config.enableChatMentions.line1": "COLOR: Met le pseudo en couleur dans le chat lorsque mentionné",
+    "mcciutils.config.enableChatMentions.line2": "SOUND: Joue un son lorsque vous êtes mentionné dans le chat",
+    "mcciutils.config.enableChatMentions.line3": "OFF: Désactive les mentions dans le chat",
+
+    "mcciutils.config.chatMentionColor": "Couleur des Mentions du Chat",
+    "mcciutils.config.chatMentionColor.line1": "Modifie la couleur des mentions dans le chat",
+
+    "mcciutils.config.questNotificationOptions": "Activer/Désactiver Notifications Quêtes",
+    "mcciutils.config.questNotificationOptions.line1": "POPUP: Affiche une notification quand une quête est complétée",
+    "mcciutils.config.questNotificationOptions.line2": "SOUND: Joue un son quand une quête est complétée",
+    "mcciutils.config.questNotificationOptions.line3": "OFF: Désactive les notifications de quêtes",
+
+    "mcciutils.config.achievementNotificationOptions": "Activer/Désactiver Notifications Succès",
+    "mcciutils.config.achievementNotificationOptions.line1": "POPUP: Affiche une notification quand un succès est débloqué",
+    "mcciutils.config.achievementNotificationOptions.line2": "SOUND: Joue un son quand un succès est débloqué",
+    "mcciutils.config.achievementNotificationOptions.line3": "OFF: Désactive les notifications de succès",
+
+    "mcciutils.config.stackSpam": "Activer/Désactiver l'Empilement de Spam",
+    "mcciutils.config.stackSpam.line1": "CONSECUTIVE: Empile les messages dupliqués consécutifs",
+    "mcciutils.config.stackSpam.line2": "ALL: Empile tous les messages dupliqués",
+    "mcciutils.config.stackSpam.line3": "OFF: Désactive l'empilement des messages dupliqués",
+
+    "mcciutils.config.autoGG": "Auto GG",
+    "mcciutils.config.autoGG.line1": "Ecrit \"gg\" dans le chat automatiquement à la fin d'une partie"
+
+}
