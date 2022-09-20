@@ -1,0 +1,23 @@
+{
+  "friend": {
+    "sounds": [
+      {
+        "name": "mcciutils:friend"
+      }
+    ]
+  },
+  "mention": {
+    "sounds": [
+      {
+        "name": "mcciutils:mention"
+      }
+    ]
+  },
+  "achievement": {
+    "sounds": [
+      {
+        "name": "mcciutils:achievement"
+      }
+    ]
+  }
+}
