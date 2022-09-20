@@ -8,6 +8,7 @@
     "LocationMixin"
   ],
   "client": [
+    "AutoGG",
     "ModBadge",
     "NotificationChatMixin",
     "SpamChatMixin",

@@ -14,6 +14,7 @@ public class ConfigInstance {
     public POPUP_NOTIFICATION_OPTIONS achievementUnlockOptions;
 
     public SPAM_OPTIONS stackSpam;
+    public boolean autoGG;
 
     public ConfigInstance() {
         // Status
@@ -31,6 +32,7 @@ public class ConfigInstance {
 
         // Spam chat
         stackSpam = SPAM_OPTIONS.CONSECUTIVE;
+        autoGG = true;
 
     }
 

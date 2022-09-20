@@ -117,6 +117,16 @@ public class ModMenuConfig implements ModMenuApi {
                 .build()
         );
 
+        chatCategory.addEntry(configBuilder.entryBuilder()
+                .startBooleanToggle(Text.translatable("mcciutils.config.autoGG"), ModConfig.INSTANCE.autoGG)
+                .setDefaultValue(true)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.autoGG.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.autoGG = val)
+                .build()
+        );
+
         return configBuilder;
     }
 

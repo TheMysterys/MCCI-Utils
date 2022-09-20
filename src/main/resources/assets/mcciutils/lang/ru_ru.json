@@ -41,5 +41,8 @@
     "mcciutils.config.stackSpam": "Стак спама",
     "mcciutils.config.stackSpam.line1": "ПОСЛЕДОВАТЕЛЬНЫЙ: Стакает последовательные повторяющиеся сообщения",
     "mcciutils.config.stackSpam.line2": "ВСЕ: Стакает все повторяющиеся сообщения",
-    "mcciutils.config.stackSpam.line3": "ВЫКЛ: Отключает стак повторяющихся сообщений"
+    "mcciutils.config.stackSpam.line3": "ВЫКЛ: Отключает стак повторяющихся сообщений",
+
+    "mcciutils.config.autoGG": "Авто ГГ",
+    "mcciutils.config.autoGG.line1": "Автоматически типы \"gg\" в чате, когда игра заканчивается"
 }
