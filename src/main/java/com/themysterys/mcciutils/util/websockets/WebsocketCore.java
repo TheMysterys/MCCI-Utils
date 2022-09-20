@@ -30,6 +30,7 @@ public class WebsocketCore {
                 // Create json object to send to server containing uuid
                 JsonObject jsonObject = new JsonObject();
                 jsonObject.addProperty("uuid", MinecraftClient.getInstance().getSession().getUuid());
+                jsonObject.addProperty("modVersion", McciUtils.modVersion);
                 // Send json object to server
                 send(jsonObject.toString());
             }
