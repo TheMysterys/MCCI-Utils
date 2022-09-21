@@ -1,0 +1,49 @@
+{
+    "key.category.mcciutils": "MCCI Utils",
+
+    "mcciutils.category.discord": "Discord Status",
+    "mcciutils.category.notifications": "Meddelanden",
+    "mcciutils.category.chat": "Chatta",
+
+    "mcciutils.config.enableDiscordStatus": "Växla Discord Status",
+    "mcciutils.config.enableDiscordStatus.line1": "Slå på och av Discord-status.",
+    "mcciutils.config.enableDiscordStatus.line2": "Du måste byta lobby för att statusen ska uppdateras.",
+
+    "mcciutils.config.customDetails": "Ändra detaljer",
+    "mcciutils.config.customDetails.line1": "IP: Visar serverns IP",
+    "mcciutils.config.customDetails.line2": "ANVÄNDARNAMN: Visar spelarens användarnamn",
+    "mcciutils.config.customDetails.line3": "MOD_VERSION: Visar versionen av modden",
+    "mcciutils.config.customDetails.line4": "Du måste ändra lobbyn för att status ska uppdateras.",
+
+    "mcciutils.config.friendNotificationOptions": "Aktivera vänaviseringar",
+    "mcciutils.config.friendNotificationOptions.line1": "POPUP: Visar en popup när en vän går med/går",
+    "mcciutils.config.friendNotificationOptions.line2": "LJUD: Spelar upp ett ljud när en vän går med/går",
+    "mcciutils.config.friendNotificationOptions.line3": "AV: Inaktiverar vänaviseringar",
+
+    "mcciutils.config.enableChatMentions": "Aktivera chattomnämnanden",
+    "mcciutils.config.enableChatMentions.line1": "FÄRG: Färgar användarnamnet i chatten när det nämns",
+    "mcciutils.config.enableChatMentions.line2": "LJUD: Spelar ett ljud när du nämns i chatten",
+    "mcciutils.config.enableChatMentions.line3": "AV: Inaktiverar chattomnämnanden",
+
+    "mcciutils.config.chatMentionColor": "Chattomnämningsfärg",
+    "mcciutils.config.chatMentionColor.line1": "Ändra färgen på chattomnämnandet",
+
+    "mcciutils.config.questNotificationOptions": "Slå på/av uppdragsmeddelanden",
+    "mcciutils.config.questNotificationOptions.line1": "POPUP: Visar en popup när ett uppdrag är slutfört",
+    "mcciutils.config.questNotificationOptions.line2": "LJUD: Spelar ett ljud när ett uppdrag är slutfört",
+    "mcciutils.config.questNotificationOptions.line3": "AV: Inaktiverar uppdragsmeddelanden",
+
+    "mcciutils.config.achievementNotificationOptions": "Aktivera prestationsaviseringar",
+    "mcciutils.config.achievementNotificationOptions.line1": "POPUP: Visar en popup när en prestation låses upp",
+    "mcciutils.config.achievementNotificationOptions.line2": "LJUD: Spelar ett ljud när en prestation låses upp",
+    "mcciutils.config.achievementNotificationOptions.line3": "AV: Inaktiverar prestationsaviseringar",
+
+    "mcciutils.config.stackSpam": "Slå på skräppoststapling",
+    "mcciutils.config.stackSpam.line1": "CONSECUTIVE: Staplar på varandra följande dubbletter av meddelanden",
+    "mcciutils.config.stackSpam.line2": "ALLA: Staplar alla dubbletter av meddelanden",
+    "mcciutils.config.stackSpam.line3": "AV: Inaktiverar stapling av dubbletter av meddelanden",
+
+    "mcciutils.config.autoGG": "Auto GG",
+    "mcciutils.config.autoGG.line1": "Anger automatiskt \"gg\" i chatten när ett spel avslutas"
+
+}
