@@ -18,7 +18,7 @@ public class UpdateCheckMixin {
     public void checkUpdate(CallbackInfo ci) {
         if (McciUtils.updateChecker.isUpdateAvailable) {
             ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
-            McciToast.add(toastManager, McciToast.Type.UPDATE, Text.literal("MCCI Utils %s is available!".formatted(McciUtils.updateChecker.latestVersion)).append("Even more text that should flow over to next line"));
+            McciToast.add(toastManager, McciToast.Type.UPDATE, Text.literal("MCCI Utils %s is available!".formatted(McciUtils.updateChecker.latestVersion)));
         }
     }
 
