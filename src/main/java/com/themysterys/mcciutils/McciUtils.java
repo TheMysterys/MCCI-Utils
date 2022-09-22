@@ -4,7 +4,7 @@ import com.themysterys.mcciutils.chat.StackedMessage;
 import com.themysterys.mcciutils.commands.RegisterCommands;
 import com.themysterys.mcciutils.util.config.ModConfig;
 import com.themysterys.mcciutils.util.discord.DiscordCore;
-import com.themysterys.mcciutils.util.websockets.WebsocketCore;
+import com.themysterys.mcciutils.util.updates.UpdateChecker;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
@@ -24,6 +24,8 @@ public class McciUtils implements ModInitializer {
     public static String modVersion = String.valueOf(FabricLoader.getInstance().getModContainer("mcciutils").get().getMetadata().getVersion());
 
     public static final Set<StackedMessage> COMPACTED_MESSAGES = new HashSet<>();
+
+    public static UpdateChecker updateChecker;
 
     public static boolean isOnMCCI() {
         if (MinecraftClient.getInstance().getCurrentServerEntry() != null) {
@@ -46,7 +48,8 @@ public class McciUtils implements ModInitializer {
             e.printStackTrace();
         }
 
-        WebsocketCore.init();
+        //WebsocketCore.init();
+        new Thread(() -> updateChecker = new UpdateChecker()).start();
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> RegisterCommands.register(dispatcher));
 
