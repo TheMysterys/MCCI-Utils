@@ -12,7 +12,8 @@
     "ModBadge",
     "NotificationChatMixin",
     "SpamChatMixin",
-    "UpdateCheckMixin"
+    "UpdateCheckMixin",
+    "menu.Panorama"
   ],
   "injectors": {
     "defaultRequire": 1
