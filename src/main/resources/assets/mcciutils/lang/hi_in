@@ -1,0 +1,48 @@
+{
+    "key.category.mcciutils": "एमसीसीआई यूटिल्स",
+
+    "mcciutils.category.discord": "डिसॉर्ड स्थिति",
+    "mcciutils.category.notifications": "सूचनाएं",
+    "mcciutils.category.chat": "चैट",
+
+    "mcciutils.config.enableDiscordStatus": "टॉगल डिस्कॉर्ड स्थिति",
+    "mcciutils.config.enableDiscordStatus.line1": "डिसॉर्ड स्थिति को चालू और बंद टॉगल करता है।",
+    "mcciutils.config.enableDiscordStatus.line2": "स्टेटस को अपडेट करने के लिए आपको लॉबी को स्विच करना होगा।",
+
+    "mcciutils.config.customDetails": "विवरण बदलें",
+    "mcciutils.config.customDetails.line1": "आईपी: सर्वर आईपी प्रदर्शित करता है",
+    "mcciutils.config.customDetails.line2": "USERNAME: प्लेयर का यूजरनेम दिखाता है",
+    "mcciutils.config.customDetails.line3": "MOD_VERSION: मॉड का संस्करण दिखाता है",
+    "mcciutils.config.customDetails.line4": "स्टेटस को अपडेट करने के लिए आपको लॉबी को स्विच करना होगा।",
+
+    "mcciutils.config.friendNotificationOptions": "मित्र सूचनाओं को टॉगल करें",
+    "mcciutils.config.friendNotificationOptions.line1": "पॉपअप: जब कोई मित्र जुड़ता/छोड़ता है तो पॉपअप दिखाता है",
+    "mcciutils.config.friendNotificationOptions.line2": "ध्वनि: जब कोई मित्र जुड़ता/छोड़ता है तो ध्वनि बजाता है",
+    "mcciutils.config.friendNotificationOptions.line3": "बंद: मित्र सूचनाएं अक्षम करता है",
+
+    "mcciutils.config.enableChatMentions": "टॉगल चैट मेंशन",
+    "mcciutils.config.enableChatMentions.line1": "रंग: उल्लेख किए जाने पर चैट में उपयोगकर्ता नाम को रंग देता है",
+    "mcciutils.config.enableChatMentions.line2": "ध्वनि: चैट में आपका उल्लेख होने पर ध्वनि बजाता है",
+    "mcciutils.config.enableChatMentions.line3": "बंद: चैट उल्लेखों को अक्षम करता है",
+
+    "mcciutils.config.chatMentionColor": "चैट मेंशन कलर",
+    "mcciutils.config.chatMentionColor.line1": "चैट उल्लेख का रंग बदलता है",
+
+    "mcciutils.config.questNotificationOptions": "टॉगल क्वेस्ट नोटिफिकेशन",
+    "mcciutils.config.questNotificationOptions.line1": "पॉपअप: खोज पूरी होने पर पॉपअप दिखाता है",
+    "mcciutils.config.questNotificationOptions.line2": "ध्वनि: खोज पूरी होने पर ध्वनि बजाता है",
+    "mcciutils.config.questNotificationOptions.line3": "बंद: खोज सूचनाओं को अक्षम करता है",
+
+    "mcciutils.config.achievementNotificationOptions": "उपलब्धि अधिसूचनाओं को टॉगल करें",
+    "mcciutils.config.achievementNotificationOptions.line1": "पॉपअप: उपलब्धि अनलॉक होने पर पॉपअप दिखाता है",
+    "mcciutils.config.achievementNotificationOptions.line2": "ध्वनि: जब कोई उपलब्धि अनलॉक होती है तो ध्वनि बजाता है",
+    "mcciutils.config.achievementNotificationOptions.line3": "बंद: उपलब्धि सूचनाएं अक्षम करता है",
+
+    "mcciutils.config.stackSpam": "स्पैम स्टैकिंग टॉगल करें",
+    "mcciutils.config.stackSpam.line1": "CONSECUTIVE: लगातार डुप्लिकेट संदेशों को स्टैक करता है",
+    "mcciutils.config.stackSpam.line2": "सभी: सभी डुप्लिकेट संदेशों को स्टैक करता है",
+    "mcciutils.config.stackSpam.line3": "बंद: डुप्लिकेट संदेशों के स्टैकिंग को अक्षम करता है",
+
+    "mcciutils.config.autoGG": "ऑटो GG",
+    "mcciutils.config.autoGG.line1": "खेल समाप्त होने पर चैट में स्वचालित रूप से \"gg\" टाइप करता है"
+}
