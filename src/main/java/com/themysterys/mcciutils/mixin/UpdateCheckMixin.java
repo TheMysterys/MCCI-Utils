@@ -1,7 +1,7 @@
 package com.themysterys.mcciutils.mixin;
 
+import com.themysterys.mcciutils.McciUtils;
 import com.themysterys.mcciutils.util.McciToast;
-import com.themysterys.mcciutils.util.updates.UpdateChecker;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
 import net.minecraft.client.toast.ToastManager;
@@ -16,9 +16,14 @@ public class UpdateCheckMixin {
 
     @Inject(at = @At("TAIL"), method = "init")
     public void checkUpdate(CallbackInfo ci) {
-        if (UpdateChecker.isUpdateAvailable()) {
+        if (McciUtils.updateChecker.isUpdateAvailable) {
             ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
-            McciToast.add(toastManager, McciToast.Type.UPDATE, Text.of("MCCI Utils %s is available!".formatted(UpdateChecker.latestVersion())));
+            McciToast.add(toastManager, McciToast.Type.UPDATE, Text.literal("MCCI Utils %s is available!".formatted(McciUtils.updateChecker.latestVersion)).append("Even more text that should flow over to next line"));
         }
+    }
+
+    @Inject(at = @At("HEAD"), method = "tick")
+    public void checkComplete(CallbackInfo ci) {
+
     }
 }

@@ -1,8 +1,8 @@
 package com.themysterys.mcciutils.util;
 
-import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.client.util.math.MatrixStack;
@@ -21,7 +21,7 @@ public class McciToast implements Toast {
     private final int width;
 
     public McciToast(Type type, Text message) {
-        this(type, getTextAsList(message), Math.max(160, 30 + Math.max(MinecraftClient.getInstance().textRenderer.getWidth(type.title), message == null ? 0 : MinecraftClient.getInstance().textRenderer.getWidth(message))));
+        this(type, getTextAsList(message), 200);
     }
 
     private McciToast(Type type, List<OrderedText> lines, int width) {
@@ -31,11 +31,16 @@ public class McciToast implements Toast {
         this.v = type.v;
     }
 
-    private static ImmutableList<OrderedText> getTextAsList(@Nullable Text text) {
-        return text == null ? ImmutableList.of() : ImmutableList.of(text.asOrderedText());
+    private static List<OrderedText> getTextAsList(@Nullable Text text) {
+        TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
+        return text == null ? List.of() : textRenderer.wrapLines(text, 160);
     }
 
-    public Toast.Visibility draw(MatrixStack matrices, ToastManager manager, long startTime){
+    public static void add(ToastManager manager, Type type, Text message) {
+        manager.add(new McciToast(type, message));
+    }
+
+    public Toast.Visibility draw(MatrixStack matrices, ToastManager manager, long startTime) {
         RenderSystem.setShaderTexture(0, TEXTURE);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         int width = this.getWidth();
@@ -54,37 +59,30 @@ public class McciToast implements Toast {
             this.drawPart(matrices, manager, width, 32 - length, height - length, length);
         }
 
-        if (this.lines == null){
+        if (this.lines == null) {
             manager.getClient().textRenderer.draw(matrices, this.title, 26.0F, 12.0F, -256);
         } else {
             manager.getClient().textRenderer.draw(matrices, this.title, 26.0F, 7.0F, -256);
 
             for (int line = 0; line < this.lines.size(); ++line) {
-                manager.getClient().textRenderer.draw(matrices, this.lines.get(line), 26.0F, (float)(18 + line * 12), -1);
+                manager.getClient().textRenderer.draw(matrices, this.lines.get(line), 26.0F, (float) (18 + line * 12), -1);
             }
         }
-
         return startTime < 5000L ? Toast.Visibility.SHOW : Toast.Visibility.HIDE;
 
     }
 
     // Stole from SystemToast (Core MC code)
     private void drawPart(MatrixStack matrices, ToastManager manager, int width, int textureV, int y, int height) {
-        int i = textureV == 0 ? 20 : 5;
+        int i = textureV == 0 ? 28 : 5;
         int j = Math.min(60, width - i);
         manager.drawTexture(matrices, 0, y, 0, this.v + textureV, i, height);
-
-        for(int k = i; k < width - j; k += this.v) {
+        for (int k = i; k < width - j; k += 32) {
             manager.drawTexture(matrices, k, y, 32, this.v + textureV, Math.min(64, width - k - j), height);
         }
 
         manager.drawTexture(matrices, width - j, y, 160 - j, this.v + textureV, j, height);
     }
-
-    public static void add(ToastManager manager, Type type, Text message) {
-        manager.add(new McciToast(type, message));
-    }
-
 
     public int getWidth() {
         return this.width;
