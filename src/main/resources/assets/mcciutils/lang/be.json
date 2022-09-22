@@ -1,0 +1,49 @@
+{
+    "key.category.mcciutils": "MCCI ইউটিলস",
+
+    "mcciutils.category.discord": "বিরোধের অবস্থা",
+    "mcciutils.category.notifications": "বিজ্ঞপ্তি",
+    "mcciutils.category.chat": "চ্যাট",
+
+    "mcciutils.config.enableDiscordStatus": "টগল ডিসকর্ড স্ট্যাটাস",
+    "mcciutils.config.enableDiscordStatus.line1": "ডিসকর্ড স্ট্যাটাস চালু এবং বন্ধ টগল করে।",
+    "mcciutils.config.enableDiscordStatus.line2": "স্থিতি আপডেট করার জন্য আপনাকে লবি পরিবর্তন করতে হবে।",
+
+    "mcciutils.config.customDetails": "বিশদ পরিবর্তন করুন",
+    "mcciutils.config.customDetails.line1": "IP: সার্ভারের IP প্রদর্শন করে",
+    "mcciutils.config.customDetails.line2": "USERNAME: প্লেয়ারের ব্যবহারকারীর নাম দেখায়",
+    "mcciutils.config.customDetails.line3": "MOD_VERSION: মোডের সংস্করণ দেখায়",
+    "mcciutils.config.customDetails.line4": "স্থিতি আপডেট করার জন্য আপনাকে লবি পরিবর্তন করতে হবে।",
+
+    "mcciutils.config.friendNotificationOptions": "বন্ধু বিজ্ঞপ্তি টগল করুন",
+    "mcciutils.config.friendNotificationOptions.line1": "পপআপ: কোনো বন্ধু যোগদান/ত্যাগ করলে একটি পপআপ দেখায়",
+    "mcciutils.config.friendNotificationOptions.line2": "শব্দ: কোনো বন্ধু যোগদান/ত্যাগ করলে একটি শব্দ বাজে",
+    "mcciutils.config.friendNotificationOptions.line3": "বন্ধ: বন্ধু বিজ্ঞপ্তি নিষ্ক্রিয় করে",
+
+    "mcciutils.config.enableChatMentions": "চ্যাট উল্লেখ টগল করুন",
+    "mcciutils.config.enableChatMentions.line1": "রঙ: উল্লেখ করা হলে চ্যাটে ব্যবহারকারীর নাম রঙ করুন",
+    "mcciutils.config.enableChatMentions.line2": "শব্দ: যখন আপনাকে চ্যাটে উল্লেখ করা হয় তখন একটি শব্দ বাজায়",
+    "mcciutils.config.enableChatMentions.line3": "বন্ধ: চ্যাট উল্লেখ অক্ষম করে",
+
+    "mcciutils.config.chatMentionColor": "চ্যাটের রঙ উল্লেখ",
+    "mcciutils.config.chatMentionColor.line1": "চ্যাটের উল্লেখের রঙ পরিবর্তন করে",
+
+    "mcciutils.config.questNotificationOptions": "কোয়েস্ট বিজ্ঞপ্তি টগল করুন",
+    "mcciutils.config.questNotificationOptions.line1": "পপআপ: একটি অনুসন্ধান সম্পন্ন হলে একটি পপআপ দেখায়",
+    "mcciutils.config.questNotificationOptions.line2": "শব্দ: একটি অনুসন্ধান সম্পন্ন হলে একটি শব্দ বাজায়",
+    "mcciutils.config.questNotificationOptions.line3": "বন্ধ: অনুসন্ধান বিজ্ঞপ্তি নিষ্ক্রিয় করে",
+
+    "mcciutils.config.achievementNotificationOptions": "অ্যাচিভমেন্ট বিজ্ঞপ্তি টগল করুন",
+    "mcciutils.config.achievementNotificationOptions.line1": "পপআপ: যখন একটি অর্জন আনলক করা হয় তখন একটি পপআপ দেখায়",
+    "mcciutils.config.achievementNotificationOptions.line2": "শব্দ: একটি কৃতিত্ব আনলক করা হলে একটি শব্দ বাজায়",
+    "mcciutils.config.achievementNotificationOptions.line3": "বন্ধ: অর্জনের বিজ্ঞপ্তি অক্ষম করে",
+
+    "mcciutils.config.stackSpam": "স্প্যাম স্ট্যাকিং টগল করুন",
+    "mcciutils.config.stackSpam.line1": "পরবর্তী: পরপর ডুপ্লিকেট বার্তাগুলিকে স্ট্যাক করে",
+    "mcciutils.config.stackSpam.line2": "সমস্ত: সমস্ত ডুপ্লিকেট বার্তা স্ট্যাক করে",
+    "mcciutils.config.stackSpam.line3": "বন্ধ: ডুপ্লিকেট বার্তার স্ট্যাকিং নিষ্ক্রিয় করে",
+
+    "mcciutils.config.autoGG": "অটো জিজি",
+    "mcciutils.config.autoGG.line1": "গেম শেষ হলে চ্যাটে স্বয়ংক্রিয়ভাবে \"gg\" টাইপ করে"
+
+}
