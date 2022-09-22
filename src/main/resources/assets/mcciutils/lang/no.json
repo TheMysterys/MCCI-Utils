@@ -1,0 +1,49 @@
+{
+    "key.category.mcciutils": "MCCI Utils",
+
+    "mcciutils.category.discord": "Discord Status",
+    "mcciutils.category.notifications": "Varsler",
+    "mcciutils.category.chat": "Chat",
+
+    "mcciutils.config.enableDiscordStatus": "Veksle Discord Status",
+    "mcciutils.config.enableDiscordStatus.line1": "Slå Discord-status av og på.",
+    "mcciutils.config.enableDiscordStatus.line2": "Du må bytte lobby for at status skal oppdateres.",
+
+    "mcciutils.config.customDetails": "Endre detaljer",
+    "mcciutils.config.customDetails.line1": "IP: Viser serverens IP",
+    "mcciutils.config.customDetails.line2": "BRUKERNAVN: Viser brukernavnet til spilleren",
+    "mcciutils.config.customDetails.line3": "MOD_VERSION: Viser versjonen av moden",
+    "mcciutils.config.customDetails.line4": "Du må bytte lobby for at status skal oppdateres.",
+
+    "mcciutils.config.friendNotificationOptions": "Slå på vennevarsler",
+    "mcciutils.config.friendNotificationOptions.line1": "POPUP: Viser en popup når en venn blir med/forlater",
+    "mcciutils.config.friendNotificationOptions.line2": "LYD: Spiller av en lyd når en venn blir med/forlater",
+    "mcciutils.config.friendNotificationOptions.line3": "AV: Deaktiverer vennevarsler",
+
+    "mcciutils.config.enableChatMentions": "Slå på chatomtale",
+    "mcciutils.config.enableChatMentions.line1": "FARGE: Farger brukernavnet i chat når det nevnes",
+    "mcciutils.config.enableChatMentions.line2": "LYD: Spiller av en lyd når du blir nevnt i chatten",
+    "mcciutils.config.enableChatMentions.line3": "AV: Deaktiverer chat-omtaler",
+
+    "mcciutils.config.chatMentionColor": "Chat-omtalefarge",
+    "mcciutils.config.chatMentionColor.line1": "Endre fargen på chat-omtalen",
+
+    "mcciutils.config.questNotificationOptions": "Slå av/på oppdragsvarsler",
+    "mcciutils.config.questNotificationOptions.line1": "POPUP: Viser en popup når et oppdrag er fullført",
+    "mcciutils.config.questNotificationOptions.line2": "LYD: Spiller en lyd når et oppdrag er fullført",
+    "mcciutils.config.questNotificationOptions.line3": "AV: Deaktiverer oppdragsvarsler",
+
+    "mcciutils.config.achievementNotificationOptions": "Slå på prestasjonsvarsler",
+    "mcciutils.config.achievementNotificationOptions.line1": "POPUP: Viser en popup når en prestasjon låses opp",
+    "mcciutils.config.achievementNotificationOptions.line2": "LYD: Spiller av en lyd når en prestasjon låses opp",
+    "mcciutils.config.achievementNotificationOptions.line3": "AV: Deaktiverer prestasjonsvarsler",
+
+    "mcciutils.config.stackSpam": "Slå på spamstabling",
+    "mcciutils.config.stackSpam.line1": "CONSECUTIVE: Stabler påfølgende dupliserte meldinger",
+    "mcciutils.config.stackSpam.line2": "ALLE: Stabler alle dupliserte meldinger",
+    "mcciutils.config.stackSpam.line3": "AV: Deaktiverer stabling av dupliserte meldinger",
+
+    "mcciutils.config.autoGG": "Auto GG",
+    "mcciutils.config.autoGG.line1": "Skriver automatisk inn \"gg\" i chat når et spill avsluttes"
+
+}

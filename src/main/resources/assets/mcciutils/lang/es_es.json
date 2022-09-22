@@ -1,0 +1,49 @@
+{
+    "key.category.mcciutils": "MCCI Utils",
+
+    "mcciutils.category.discord": "Estado de la discordia",
+    "mcciutils.category.notifications": "Notificaciones",
+    "mcciutils.category.chat": "Chat",
+
+    "mcciutils.config.enableDiscordStatus": "Activar estado de discordia",
+    "mcciutils.config.enableDiscordStatus.line1": "Activa y desactiva el Estado de Discordia",
+    "mcciutils.config.enableDiscordStatus.line2": "Tendrás que cambiar de lobby para que el estado se actualice",
+
+    "mcciutils.config.customDetails": "Cambiar detalles",
+    "mcciutils.config.customDetails.line1": "IP: Muestra la IP del servidor",
+    "mcciutils.config.customDetails.line2": "USERNAME: Muestra el nombre de usuario del jugador",
+    "mcciutils.config.customDetails.line3": "MOD_VERSION: Muestra la versión del mod",
+    "mcciutils.config.customDetails.line4": "Tendrás que cambiar de lobby para que el estado se actualice",
+
+    "mcciutils.config.friendNotificationOptions": "Toggle Amigos Notificaciones",
+    "mcciutils.config.friendNotificationOptions.line1": "POPUP: Muestra una ventana emergente cuando un amigo se une/se va",
+    "mcciutils.config.friendNotificationOptions.line2": "SOUND: Reproduce un sonido cuando un amigo se une/abandona",
+    "mcciutils.config.friendNotificationOptions.line3": "OFF: Desactiva las notificaciones de los amigos",
+
+    "mcciutils.config.enableChatMentions": "Alternar menciones de chat",
+    "mcciutils.config.enableChatMentions.line1": "COLOR: Colorea el nombre de usuario en el chat cuando se menciona",
+    "mcciutils.config.enableChatMentions.line2": "SOUND: Reproduce un sonido cuando te mencionan en el chat",
+    "mcciutils.config.enableChatMentions.line3": "OFF: Desactiva las menciones en el chat",
+
+    "mcciutils.config.chatMentionColor": "Color de las menciones del chat",
+    "mcciutils.config.chatMentionColor.line1": "Cambia el color de la mención del chat",
+
+    "mcciutils.config.questNotificationOptions": "Alternar las notificaciones de búsqueda",
+    "mcciutils.config.questNotificationOptions.line1": "POPUP: Muestra una ventana emergente cuando se completa una búsqueda",
+    "mcciutils.config.questNotificationOptions.line2": "SOUND: Reproduce un sonido cuando se completa una búsqueda",
+    "mcciutils.config.questNotificationOptions.line3": "OFF: Desactiva las notificaciones de búsqueda",
+
+    "mcciutils.config.achievementNotificationOptions": "Alternar notificaciones de logros",
+    "mcciutils.config.achievementNotificationOptions.line1": "POPUP: Muestra una ventana emergente cuando se desbloquea un logro",
+    "mcciutils.config.achievementNotificationOptions.line2": "SOUND: Reproduce un sonido cuando se desbloquea un logro",
+    "mcciutils.config.achievementNotificationOptions.line3": "OFF: Desactiva las notificaciones de logros",
+
+    "mcciutils.config.stackSpam": "Alternar el apilamiento de spam",
+    "mcciutils.config.stackSpam.line1": "CONSECUENTE: Apila los mensajes duplicados consecutivos",
+    "mcciutils.config.stackSpam.line2": "ALL: Apila todos los mensajes duplicados",
+    "mcciutils.config.stackSpam.line3": "OFF: Desactiva el apilamiento de los mensajes duplicados",
+
+    "mcciutils.config.autoGG": "Auto GG",
+    "mcciutils.config.autoGG.line1": "Escribe automáticamente \ "gg\" en el chat cuando termina una partida"
+
+}
