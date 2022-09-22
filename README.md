@@ -33,3 +33,5 @@ This mod does not add music due to it being added to the server as a option at a
    - Swedish
  - **Eevee**
    - French 
+ - [**BurAndBY**](https://github.com/BurAndBY)
+   - Russian
