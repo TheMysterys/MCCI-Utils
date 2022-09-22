@@ -25,7 +25,6 @@ public class McciUtils implements ModInitializer {
 
     public static final Set<StackedMessage> COMPACTED_MESSAGES = new HashSet<>();
 
-    public static UpdateChecker updateChecker;
 
     public static boolean isOnMCCI() {
         if (MinecraftClient.getInstance().getCurrentServerEntry() != null) {
@@ -49,7 +48,6 @@ public class McciUtils implements ModInitializer {
         }
 
         //WebsocketCore.init();
-        new Thread(() -> updateChecker = new UpdateChecker()).start();
 
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> RegisterCommands.register(dispatcher));
 
