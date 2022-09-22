@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
 
 
@@ -21,8 +22,14 @@ public class UpdateChecker {
         JsonArray json;
         try {
             json = readJsonFromUrl("https://api.modrinth.com/v2/project/DJ1mNMjS/version");
-        } catch (IOException e) {
+        } catch (UnknownHostException e){
+            McciUtils.LOGGER.warn("Unable to check for update");
+            json = null;
+        }catch (IOException e) {
             e.printStackTrace();
+            return;
+        }
+        if (json == null) {
             return;
         }
         isUpdateAvailable = !json.get(0).getAsJsonObject().get("version_number").getAsString().equals(McciUtils.modVersion);
