@@ -21,7 +21,7 @@ public class McciToast implements Toast {
     private final int width;
 
     public McciToast(Type type, Text message) {
-        this(type, getTextAsList(message), Math.min(200, MinecraftClient.getInstance().textRenderer.getWidth(message)+35));
+        this(type, getTextAsList(message), Math.min(200, Math.max(MinecraftClient.getInstance().textRenderer.getWidth(type.title), MinecraftClient.getInstance().textRenderer.getWidth(message)) + 35));
     }
 
     private McciToast(Type type, List<OrderedText> lines, int width) {
