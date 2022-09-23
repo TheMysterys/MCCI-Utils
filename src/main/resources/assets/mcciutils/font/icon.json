@@ -8,6 +8,15 @@
       ],
       "ascent": 7,
       "height": 7
+    },
+    {
+      "type": "bitmap",
+      "file": "mcciutils:gui/join_logo.png",
+      "chars": [
+        "\uEFEE"
+      ],
+      "ascent": 10,
+      "height": 12
     }
   ]
 }
