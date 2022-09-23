@@ -13,7 +13,8 @@
     "NotificationChatMixin",
     "SpamChatMixin",
     "UpdateCheckMixin",
-    "menu.Panorama"
+    "menu.Panorama",
+    "menu.QuickJoin"
   ],
   "injectors": {
     "defaultRequire": 1
