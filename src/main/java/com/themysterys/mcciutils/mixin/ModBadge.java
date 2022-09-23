@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.themysterys.mcciutils.util.chat.ModBadgeIcon.modBadge;
+import static com.themysterys.mcciutils.util.chat.CustomFont.modBadge;
 
 @Mixin(PlayerListHud.class)
 public class ModBadge {

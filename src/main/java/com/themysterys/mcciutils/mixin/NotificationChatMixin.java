@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
-import static com.themysterys.mcciutils.util.chat.ModBadgeIcon.modBadge;
+import static com.themysterys.mcciutils.util.chat.CustomFont.modBadge;
 import static com.themysterys.mcciutils.util.sounds.Sounds.*;
 
 @Mixin(ChatHud.class)
