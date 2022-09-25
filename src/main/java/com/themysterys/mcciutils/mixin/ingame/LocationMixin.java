@@ -1,4 +1,4 @@
-package com.themysterys.mcciutils.mixin;
+package com.themysterys.mcciutils.mixin.ingame;
 
 import com.themysterys.mcciutils.global.LocationID;
 import com.themysterys.mcciutils.McciUtils;

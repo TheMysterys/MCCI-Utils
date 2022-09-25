@@ -1,27 +1,23 @@
-package com.themysterys.mcciutils.util.updates;
+package com.themysterys.mcciutils.util.api;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.themysterys.mcciutils.McciUtils;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.net.UnknownHostException;
-import java.nio.charset.StandardCharsets;
+
+import static com.themysterys.mcciutils.util.api.APIUtils.readJsonArrayFromUrl;
 
 
-public class UpdateChecker {
+public class UpdateCheckerAPI {
 
     public boolean isUpdateAvailable;
     public String latestVersion;
 
-    public UpdateChecker() {
+    public UpdateCheckerAPI() {
         JsonArray json;
         try {
-            json = readJsonFromUrl("https://api.modrinth.com/v2/project/DJ1mNMjS/version");
+            json = readJsonArrayFromUrl("https://api.modrinth.com/v2/project/DJ1mNMjS/version");
         } catch (UnknownHostException e){
             McciUtils.LOGGER.warn("Unable to check for update");
             json = null;
@@ -34,12 +30,5 @@ public class UpdateChecker {
         }
         isUpdateAvailable = !json.get(0).getAsJsonObject().get("version_number").getAsString().equals(McciUtils.modVersion);
         latestVersion = json.get(0).getAsJsonObject().get("version_number").getAsString();
-    }
-
-    public static JsonArray readJsonFromUrl(String url) throws IOException {
-        try (InputStream is = new URL(url).openStream()) {
-            JsonElement root = JsonParser.parseReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-            return root.getAsJsonArray();
-        }
     }
 }

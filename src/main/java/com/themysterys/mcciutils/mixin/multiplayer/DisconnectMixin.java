@@ -1,4 +1,4 @@
-package com.themysterys.mcciutils.mixin;
+package com.themysterys.mcciutils.mixin.multiplayer;
 
 import com.themysterys.mcciutils.util.discord.DiscordRP;
 import net.minecraft.network.ClientConnection;

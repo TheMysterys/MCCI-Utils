@@ -1,4 +1,4 @@
-package com.themysterys.mcciutils.mixin;
+package com.themysterys.mcciutils.mixin.ingame;
 
 import com.themysterys.mcciutils.McciUtils;
 import com.themysterys.mcciutils.chat.StackedMessage;
