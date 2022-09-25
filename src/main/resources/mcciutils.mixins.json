@@ -4,17 +4,18 @@
   "package": "com.themysterys.mcciutils.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "DisconnectMixin",
-    "LocationMixin"
+    "ingame.LocationMixin",
+    "multiplayer.DisconnectMixin"
   ],
   "client": [
-    "AutoGG",
-    "ModBadge",
-    "NotificationChatMixin",
-    "SpamChatMixin",
-    "UpdateCheckMixin",
+    "ingame.AutoGG",
+    "ingame.ModBadge",
+    "ingame.NotificationChatMixin",
+    "ingame.SpamChatMixin",
+    "menu.MCCDay",
     "menu.Panorama",
-    "menu.QuickJoin"
+    "menu.QuickJoin",
+    "multiplayer.UpdateCheckMixin"
   ],
   "injectors": {
     "defaultRequire": 1
