@@ -1,13 +1,18 @@
 package com.themysterys.mcciutils.mixin.menu;
 
+import com.themysterys.mcciutils.McciUtils;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.RotatingCubeMapRenderer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Util;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -16,7 +21,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(TitleScreen.class)
 public class Panorama extends Screen {
 
-    private long lastInteractionTime;
+    @Mutable
+    @Shadow @Final private RotatingCubeMapRenderer backgroundRenderer;
+    private static long lastInteractionTime;
     private float fade;
     private boolean isPlayingMusic = false;
 
@@ -36,9 +43,10 @@ public class Panorama extends Screen {
         return super.keyPressed(keyCode, scanCode, modifiers);
     }
 
-    @Inject(at = @At("HEAD"), method = "init()V")
-    public void init(CallbackInfo callbackInfo) {
+    @Inject(at = @At("TAIL"), method = "<init>(Z)V")
+    private void onTitleScreenInit(boolean bl, CallbackInfo ci) {
         lastInteractionTime = Util.getMeasuringTimeMs();
+        this.backgroundRenderer = new RotatingCubeMapRenderer(McciUtils.panorama);
     }
 
     @ModifyVariable(method = "render(Lnet/minecraft/client/util/math/MatrixStack;IIF)V", at = @At("STORE"), ordinal = 2)
