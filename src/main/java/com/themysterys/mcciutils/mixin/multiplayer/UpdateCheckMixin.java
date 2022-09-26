@@ -23,8 +23,4 @@ public class UpdateCheckMixin {
         }
     }
 
-    @Inject(at = @At("HEAD"), method = "tick")
-    public void checkComplete(CallbackInfo ci) {
-
-    }
 }
