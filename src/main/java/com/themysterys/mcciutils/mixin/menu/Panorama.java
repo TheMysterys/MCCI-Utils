@@ -58,7 +58,6 @@ public class Panorama extends Screen {
             }
             // Decrease fade from 1 to 0 in steps of 0.01 but don't go below 0
             fade = Math.max(fade - 0.01F, 0);
-            return fade;
         } else {
             if (isPlayingMusic) {
                 isPlayingMusic = false;
@@ -66,7 +65,7 @@ public class Panorama extends Screen {
             }
             // Increase fade from 0 to 1 in steps of 0.01 but don't go above 1
             fade = Math.min(fade + 0.01F, 1);
-            return fade;
         }
+        return fade;
     }
 }
