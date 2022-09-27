@@ -15,7 +15,7 @@
     "menu.SplashSelector",
     "menu.Panorama",
     "menu.QuickJoin",
-    "multiplayer.UpdateCheckMixin"
+    "menu.UpdateCheckMixin"
   ],
   "injectors": {
     "defaultRequire": 1
