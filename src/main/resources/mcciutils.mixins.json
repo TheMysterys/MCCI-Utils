@@ -12,7 +12,7 @@
     "ingame.ModBadge",
     "ingame.NotificationChatMixin",
     "ingame.SpamChatMixin",
-    "menu.MCCDay",
+    "menu.SplashSelector",
     "menu.Panorama",
     "menu.QuickJoin",
     "multiplayer.UpdateCheckMixin"
