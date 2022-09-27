@@ -14,7 +14,7 @@ public class SplashSelector {
 
     @Shadow @Nullable private String splashText;
 
-    @Inject(at = @At("HEAD"), method = "init()V")
+    @Inject(at = @At("TAIL"), method = "init()V")
     public void isMCCDay(CallbackInfo ci) {
         if (DateAPI.isMCCIBirthday()) {
             String age = DateAPI.getMCCIAge();
