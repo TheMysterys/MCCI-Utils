@@ -1,6 +1,5 @@
 package com.themysterys.mcciutils.util.api;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 
@@ -29,12 +28,5 @@ public class MCCAPI {
         calendar.setTime(Date.from(Instant.parse(json.get("data").getAsJsonObject().get("date").getAsString())));
         calendar.setTimeZone(TimeZone.getTimeZone("UTC"));
         mccDate = calendar;
-    }
-
-    public boolean isMCCDay() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.setTimeZone(TimeZone.getTimeZone("UTC"));
-        return calendar.get(Calendar.DAY_OF_YEAR) == mccDate.get(Calendar.DAY_OF_YEAR);
     }
 }
