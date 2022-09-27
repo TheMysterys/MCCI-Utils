@@ -23,6 +23,8 @@ public class McciUtils implements ModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger("MCCI Utils");
     public static boolean hasInitialized = false;
+    public static boolean hasShownUpdateToast = false;
+
     public static String modVersion = String.valueOf(FabricLoader.getInstance().getModContainer("mcciutils").get().getMetadata().getVersion());
 
     public static final Set<StackedMessage> COMPACTED_MESSAGES = new HashSet<>();
