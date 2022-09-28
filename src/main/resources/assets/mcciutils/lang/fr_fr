@@ -47,5 +47,8 @@
 
     "mcciutils.config.autoGG": "Auto GG",
     "mcciutils.config.autoGG.line1": "Ecrit \"gg\" dans le chat automatiquement à la fin d'une partie"
+    
+    "mcciutils.config.hideSlotHighlight": "Masquer la surbrillance de l'emplacement",
+    "mcciutils.config.hideSlotHighlight.line1": "Masque la surbrillance de l'emplacement survolé dans les inventaires lorsqu'ils ne contiennent aucun élément"
 
 }
