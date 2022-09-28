@@ -21,6 +21,9 @@
     ],
     "main": [
       "com.themysterys.mcciutils.McciUtils"
+    ],
+    "preLaunch": [
+      "com.themysterys.mcciutils.util.PreLoad"
     ]
   },
   "mixins": [
