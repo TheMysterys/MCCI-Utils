@@ -11,10 +11,11 @@
     "ingame.AutoGG",
     "ingame.ModBadge",
     "ingame.NotificationChatMixin",
+    "ingame.RemoveHighlight",
     "ingame.SpamChatMixin",
-    "menu.SplashSelector",
     "menu.Panorama",
     "menu.QuickJoin",
+    "menu.SplashSelector",
     "menu.UpdateCheckMixin"
   ],
   "injectors": {
