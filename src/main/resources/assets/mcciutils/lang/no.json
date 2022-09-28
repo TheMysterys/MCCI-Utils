@@ -46,4 +46,7 @@
     "mcciutils.config.autoGG": "Auto GG",
     "mcciutils.config.autoGG.line1": "Skriver automatisk inn \"gg\" i chat når et spill avsluttes"
 
+    "mcciutils.config.hideSlotHighlight": "Skjul sporhøydepunkt",
+    "mcciutils.config.hideSlotHighlight.line1": "Skjuler det pekende sporhøydepunktet i varelager når de ikke har noen vare i seg"
+    
 }
