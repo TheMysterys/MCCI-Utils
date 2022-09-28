@@ -4,35 +4,41 @@ import net.minecraft.util.Formatting;
 
 public class ConfigInstance {
 
+    // Discord
     public boolean enableDiscordStatus;
     public RPCustomDetails customDetails;
-    public POPUP_NOTIFICATION_OPTIONS friendNotifications;
-    public CHAT_NOTIFICATION_OPTIONS chatMentions;
-    public COLOR_OPTIONS chatMentionColor;
 
+    // Notifications
+    public POPUP_NOTIFICATION_OPTIONS friendNotifications;
     public POPUP_NOTIFICATION_OPTIONS questCompleteOptions;
     public POPUP_NOTIFICATION_OPTIONS achievementUnlockOptions;
 
+    // Chat
+    public CHAT_NOTIFICATION_OPTIONS chatMentions;
+    public COLOR_OPTIONS chatMentionColor;
     public SPAM_OPTIONS stackSpam;
     public boolean autoGG;
 
+    // Misc
+    public boolean hideSlotHighlight;
+
     public ConfigInstance() {
-        // Status
+        // Discord
         enableDiscordStatus = true;
         customDetails = RPCustomDetails.IP;
-        // Friend Notification
+        // Notifications
         friendNotifications = POPUP_NOTIFICATION_OPTIONS.BOTH;
-        // Chat Mentions
-        chatMentions = CHAT_NOTIFICATION_OPTIONS.BOTH;
-        chatMentionColor = COLOR_OPTIONS.YELLOW;
-        // Quest Complete
         questCompleteOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
-        // Achievement Unlocks
         achievementUnlockOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
 
-        // Spam chat
+        // Chat
+        chatMentions = CHAT_NOTIFICATION_OPTIONS.BOTH;
+        chatMentionColor = COLOR_OPTIONS.YELLOW;
         stackSpam = SPAM_OPTIONS.CONSECUTIVE;
         autoGG = true;
+
+        // Misc
+        hideSlotHighlight = true;
 
     }
 

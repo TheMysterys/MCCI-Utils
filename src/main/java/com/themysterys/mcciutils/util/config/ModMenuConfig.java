@@ -17,6 +17,7 @@ public class ModMenuConfig implements ModMenuApi {
                 .setTransparentBackground(true)
                 .setSavingRunnable(ModConfig::writeJson);
 
+
         ConfigCategory discordCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.discord"));
 
         discordCategory.addEntry(configBuilder.entryBuilder()
@@ -42,6 +43,7 @@ public class ModMenuConfig implements ModMenuApi {
                 .setSaveConsumer(val -> ModConfig.INSTANCE.customDetails = val)
                 .build()
         );
+
 
         ConfigCategory notificationCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.notifications"));
 
@@ -80,6 +82,7 @@ public class ModMenuConfig implements ModMenuApi {
                 .setSaveConsumer(val -> ModConfig.INSTANCE.achievementUnlockOptions = val)
                 .build()
         );
+
 
         ConfigCategory chatCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.chat"));
 
@@ -124,6 +127,19 @@ public class ModMenuConfig implements ModMenuApi {
                         Text.translatable("mcciutils.config.autoGG.line1")
                 )
                 .setSaveConsumer(val -> ModConfig.INSTANCE.autoGG = val)
+                .build()
+        );
+
+
+        ConfigCategory miscCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.misc"));
+
+        miscCategory.addEntry(configBuilder.entryBuilder()
+                .startBooleanToggle(Text.translatable("mcciutils.config.hideSlotHighlight"), ModConfig.INSTANCE.hideSlotHighlight)
+                .setDefaultValue(true)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.hideSlotHighlight.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.hideSlotHighlight = val)
                 .build()
         );
 
