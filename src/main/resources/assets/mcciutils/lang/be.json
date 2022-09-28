@@ -46,4 +46,7 @@
     "mcciutils.config.autoGG": "অটো জিজি",
     "mcciutils.config.autoGG.line1": "গেম শেষ হলে চ্যাটে স্বয়ংক্রিয়ভাবে \"gg\" টাইপ করে"
 
+    "mcciutils.config.hideSlotHighlight": "স্লট হাইলাইট লুকান",
+     "mcciutils.config.hideSlotHighlight.line1": "ইনভেন্টরিতে হোভার করা স্লট হাইলাইট লুকিয়ে রাখে যখন সেগুলিতে কোনো আইটেম থাকে না"
+    
 }
