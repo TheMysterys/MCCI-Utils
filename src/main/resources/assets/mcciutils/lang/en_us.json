@@ -4,6 +4,7 @@
     "mcciutils.category.discord": "Discord Status",
     "mcciutils.category.notifications": "Notifications",
     "mcciutils.category.chat": "Chat",
+    "mcciutils.category.misc": "Misc",
 
     "mcciutils.config.enableDiscordStatus": "Toggle Discord Status",
     "mcciutils.config.enableDiscordStatus.line1": "Toggles the Discord Status on and off.",
@@ -44,6 +45,9 @@
     "mcciutils.config.stackSpam.line3": "OFF: Disables stacking of duplicate messages",
 
     "mcciutils.config.autoGG": "Auto GG",
-    "mcciutils.config.autoGG.line1": "Automatically types \"gg\" in chat when a game ends"
+    "mcciutils.config.autoGG.line1": "Automatically types \"gg\" in chat when a game ends",
+
+    "mcciutils.config.hideSlotHighlight": "Hide Slot Highlight",
+    "mcciutils.config.hideSlotHighlight.line1": "Hides the hovered slot highlight in inventories when they have no item in them"
 
 }
