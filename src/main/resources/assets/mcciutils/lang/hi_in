@@ -45,4 +45,7 @@
 
     "mcciutils.config.autoGG": "ऑटो GG",
     "mcciutils.config.autoGG.line1": "खेल समाप्त होने पर चैट में स्वचालित रूप से \"gg\" टाइप करता है"
+
+    "mcciutils.config.hideSlotHighlight": "स्लॉट हाइलाइट छुपाएं",
+    "mcciutils.config.hideSlotHighlight.line1": "होवर किए गए स्लॉट हाइलाइट को इन्वेंट्री में छुपाता है जब उनमें कोई आइटम नहीं होता है"
 }
