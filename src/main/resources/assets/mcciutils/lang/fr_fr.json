@@ -4,16 +4,16 @@
     "mcciutils.category.discord": "Status Discord",
     "mcciutils.category.notifications": "Notifications",
     "mcciutils.category.chat": "Chat",
+    "mcciutils.category.misc": "Misc",
+
 
     "mcciutils.config.enableDiscordStatus": "Activer/Désactiver Statut Discord",
     "mcciutils.config.enableDiscordStatus.line1": "Active ou désactive le statut Discord",
-    "mcciutils.config.enableDiscordStatus.line2": "Vous devrez changer de lobby pour mettre à jour le statut.",
 
     "mcciutils.config.customDetails": "Modifier les détails",
     "mcciutils.config.customDetails.line1": "IP: Affiche l'IP du serveur",
     "mcciutils.config.customDetails.line2": "USERNAME: Affiche le pseudo du joueur",
     "mcciutils.config.customDetails.line3": "MOD_VERSION: Affiche la version du mod",
-    "mcciutils.config.customDetails.line4": "Vous devrez changer de lobby pour mettre à jour le statut.",
 
     "mcciutils.config.friendNotificationOptions": "Activer/Désactiver Notifications Amis",
     "mcciutils.config.friendNotificationOptions.line1": "POPUP: Affiche une notification quand un(e) ami(e) se connecte ou déconnecte",
@@ -44,6 +44,9 @@
     "mcciutils.config.stackSpam.line3": "OFF: Désactive l'empilement des messages dupliqués",
 
     "mcciutils.config.autoGG": "Auto GG",
-    "mcciutils.config.autoGG.line1": "Ecrit \"gg\" dans le chat automatiquement à la fin d'une partie"
+    "mcciutils.config.autoGG.line1": "Ecrit \"gg\" dans le chat automatiquement à la fin d'une partie",
+
+    "mcciutils.config.hideSlotHighlight": "Masquer la surbrillance de l'emplacement",
+    "mcciutils.config.hideSlotHighlight.line1": "Masque la surbrillance de l'emplacement survolé dans les inventaires lorsqu'ils ne contiennent aucun élément"
 
 }

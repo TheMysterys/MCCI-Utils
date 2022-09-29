@@ -4,16 +4,16 @@
     "mcciutils.category.discord": "Discord Status",
     "mcciutils.category.notifications": "Meddelanden",
     "mcciutils.category.chat": "Chatta",
+    "mcciutils.category.misc": "Misc",
+
 
     "mcciutils.config.enableDiscordStatus": "Växla Discord Status",
     "mcciutils.config.enableDiscordStatus.line1": "Slå på och av Discord-status.",
-    "mcciutils.config.enableDiscordStatus.line2": "Du måste byta lobby för att statusen ska uppdateras.",
 
     "mcciutils.config.customDetails": "Ändra detaljer",
     "mcciutils.config.customDetails.line1": "IP: Visar serverns IP",
     "mcciutils.config.customDetails.line2": "ANVÄNDARNAMN: Visar spelarens användarnamn",
     "mcciutils.config.customDetails.line3": "MOD_VERSION: Visar versionen av modden",
-    "mcciutils.config.customDetails.line4": "Du måste ändra lobbyn för att status ska uppdateras.",
 
     "mcciutils.config.friendNotificationOptions": "Aktivera vänaviseringar",
     "mcciutils.config.friendNotificationOptions.line1": "POPUP: Visar en popup när en vän går med/går",
@@ -44,7 +44,7 @@
     "mcciutils.config.stackSpam.line3": "AV: Inaktiverar stapling av dubbletter av meddelanden",
 
     "mcciutils.config.autoGG": "Auto GG",
-    "mcciutils.config.autoGG.line1": "Anger automatiskt \"gg\" i chatten när ett spel avslutas"
+    "mcciutils.config.autoGG.line1": "Anger automatiskt \"gg\" i chatten när ett spel avslutas",
 
     "mcciutils.config.hideSlotHighlight": "Dölj platsmarkering",
     "mcciutils.config.hideSlotHighlight.line1": "Döljer den svävande höjdpunkten i inventeringarna när de inte har något föremål i dem"

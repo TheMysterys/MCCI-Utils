@@ -4,16 +4,16 @@
     "mcciutils.category.discord": "Статус Discord",
     "mcciutils.category.notifications": "Уведомления",
     "mcciutils.category.chat": "Чат",
+    "mcciutils.category.misc": "Misc",
+
 
     "mcciutils.config.enableDiscordStatus": "Переключить статус Discord",
     "mcciutils.config.enableDiscordStatus.line1": "Включает и выключает статус Discord.",
-    "mcciutils.config.enableDiscordStatus.line2": "Вам нужно будет сменить лобби для обновления статуса.",
 
     "mcciutils.config.customDetails": "Сменить детали",
     "mcciutils.config.customDetails.line1": "IP: Показывает IP сервера",
     "mcciutils.config.customDetails.line2": "НИКНЕЙМ: Показывает никнейм игрока",
     "mcciutils.config.customDetails.line3": "ВЕРСИЯ: Показывает версию мода",
-    "mcciutils.config.customDetails.line4": "Вам нужно будет сменить лобби для обновления статуса.",
 
     "mcciutils.config.friendNotificationOptions": "Уведомление о друзьях",
     "mcciutils.config.friendNotificationOptions.line1": "ОКНО: Показывает всплывающее окно, когда друг входит/выходит",
@@ -44,5 +44,9 @@
     "mcciutils.config.stackSpam.line3": "ВЫКЛ: Отключает стак повторяющихся сообщений",
 
     "mcciutils.config.autoGG": "Авто ГГ",
-    "mcciutils.config.autoGG.line1": "Автоматически типы \"gg\" в чате, когда игра заканчивается"
+    "mcciutils.config.autoGG.line1": "Автоматически типы \"gg\" в чате, когда игра заканчивается",
+
+    "mcciutils.config.hideSlotHighlight": "Hide Slot Highlight",
+    "mcciutils.config.hideSlotHighlight.line1": "Hides the hovered slot highlight in inventories when they have no item in them"
+
 }

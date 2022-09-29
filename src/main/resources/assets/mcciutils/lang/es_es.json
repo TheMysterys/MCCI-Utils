@@ -4,16 +4,16 @@
     "mcciutils.category.discord": "Estado de la discordia",
     "mcciutils.category.notifications": "Notificaciones",
     "mcciutils.category.chat": "Chat",
+    "mcciutils.category.misc": "Misc",
+
 
     "mcciutils.config.enableDiscordStatus": "Activar estado de discordia",
     "mcciutils.config.enableDiscordStatus.line1": "Activa y desactiva el Estado de Discordia",
-    "mcciutils.config.enableDiscordStatus.line2": "Tendrás que cambiar de lobby para que el estado se actualice",
 
     "mcciutils.config.customDetails": "Cambiar detalles",
     "mcciutils.config.customDetails.line1": "IP: Muestra la IP del servidor",
     "mcciutils.config.customDetails.line2": "USERNAME: Muestra el nombre de usuario del jugador",
     "mcciutils.config.customDetails.line3": "MOD_VERSION: Muestra la versión del mod",
-    "mcciutils.config.customDetails.line4": "Tendrás que cambiar de lobby para que el estado se actualice",
 
     "mcciutils.config.friendNotificationOptions": "Toggle Amigos Notificaciones",
     "mcciutils.config.friendNotificationOptions.line1": "POPUP: Muestra una ventana emergente cuando un amigo se une/se va",
