@@ -12,7 +12,7 @@
     "sources": "https://github.com/TheMysterys/MCCI-Utils",
     "homepage": "https://modrinth.com/mod/mcci-utils"
   },
-  "license": "MIT",
+  "license": "LGPL-3",
   "icon": "assets/mcciutils/icon.png",
   "environment": "client",
   "entrypoints": {
