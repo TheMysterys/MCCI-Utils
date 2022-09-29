@@ -13,6 +13,7 @@
     "ingame.NotificationChatMixin",
     "ingame.RemoveHighlight",
     "ingame.SpamChatMixin",
+    "ingame.TooltipWrap",
     "menu.Panorama",
     "menu.QuickJoin",
     "menu.SplashSelector",
