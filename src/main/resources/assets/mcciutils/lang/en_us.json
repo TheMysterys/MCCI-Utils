@@ -8,13 +8,11 @@
 
     "mcciutils.config.enableDiscordStatus": "Toggle Discord Status",
     "mcciutils.config.enableDiscordStatus.line1": "Toggles the Discord Status on and off.",
-    "mcciutils.config.enableDiscordStatus.line2": "You will need to switch lobbies for status to update.",
 
     "mcciutils.config.customDetails": "Change details",
     "mcciutils.config.customDetails.line1": "IP: Displays the server IP",
     "mcciutils.config.customDetails.line2": "USERNAME: Shows the username of the player",
     "mcciutils.config.customDetails.line3": "MOD_VERSION: Shows the version of the mod",
-    "mcciutils.config.customDetails.line4": "You will need to switch lobbies for status to update.",
 
     "mcciutils.config.friendNotificationOptions": "Toggle Friend Notifications",
     "mcciutils.config.friendNotificationOptions.line1": "POPUP: Shows a popup when a friend joins/leaves",

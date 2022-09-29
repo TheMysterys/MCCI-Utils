@@ -21,7 +21,9 @@ public class DiscordRP {
     static boolean triedReconnect = false;
 
     public static void initializeRpc() {
-        if (!initializedRpc && McciUtils.isOnMCCI()) {
+        if (!McciUtils.isOnMCCI() || !ModConfig.INSTANCE.enableDiscordStatus) {
+            disconnect();
+        } else if (!initializedRpc) {
             initializedRpc = true;
             CreateParams params = new CreateParams();
             params.setClientID(1012500697880731708L);
@@ -52,6 +54,7 @@ public class DiscordRP {
     }
 
     public static void updateRPC(String location) {
+        if (!ModConfig.INSTANCE.enableDiscordStatus) return;
         if (!initializedRpc) {
             initializeRpc();
         }
@@ -90,9 +93,9 @@ public class DiscordRP {
 
     public static void disconnect() {
         initializedRpc = false;
-        McciUtils.LOGGER.info("Disconnecting from Discord RPC");
         if (enabled) {
             try {
+                McciUtils.LOGGER.info("Disconnecting from Discord RPC");
                 discordRPC.close();
             } catch (GameSDKException e) {
                 e.printStackTrace();

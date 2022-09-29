@@ -44,9 +44,8 @@
     "mcciutils.config.stackSpam.line3": "OFF: Desactiva el apilamiento de los mensajes duplicados",
 
     "mcciutils.config.autoGG": "Auto GG",
-    "mcciutils.config.autoGG.line1": "Escribe automáticamente \ "gg\" en el chat cuando termina una partida"
+    "mcciutils.config.autoGG.line1": "Escribe automáticamente \"gg\" en el chat cuando termina una partida",
     
     "mcciutils.config.hideSlotHighlight": "Ocultar resaltado de ranura",
     "mcciutils.config.hideSlotHighlight.line1": "Oculta el resalte de la ranura sobre el cursor en los inventarios cuando no tienen ningún artículo en ellos"
-
 }
