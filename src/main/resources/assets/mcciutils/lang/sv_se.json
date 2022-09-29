@@ -46,4 +46,7 @@
     "mcciutils.config.autoGG": "Auto GG",
     "mcciutils.config.autoGG.line1": "Anger automatiskt \"gg\" i chatten när ett spel avslutas"
 
+    "mcciutils.config.hideSlotHighlight": "Dölj platsmarkering",
+    "mcciutils.config.hideSlotHighlight.line1": "Döljer den svävande höjdpunkten i inventeringarna när de inte har något föremål i dem"
+    
 }
