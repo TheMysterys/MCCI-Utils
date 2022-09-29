@@ -2,7 +2,9 @@ package com.themysterys.mcciutils.util.config;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+import com.themysterys.mcciutils.global.LocationID;
 import com.themysterys.mcciutils.util.config.ConfigInstance.RPCustomDetails;
+import com.themysterys.mcciutils.util.discord.DiscordRP;
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import net.minecraft.text.Text;
@@ -24,10 +26,16 @@ public class ModMenuConfig implements ModMenuApi {
                 .startBooleanToggle(Text.translatable("mcciutils.config.enableDiscordStatus"), ModConfig.INSTANCE.enableDiscordStatus)
                 .setDefaultValue(true)
                 .setTooltip(
-                        Text.translatable("mcciutils.config.enableDiscordStatus.line1"),
-                        Text.translatable("mcciutils.config.enableDiscordStatus.line2")
+                        Text.translatable("mcciutils.config.enableDiscordStatus.line1")
                 )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.enableDiscordStatus = val)
+                .setSaveConsumer(val -> {
+                    ModConfig.INSTANCE.enableDiscordStatus = val;
+                    if (!val) {
+                        DiscordRP.disconnect();
+                    } else {
+                        DiscordRP.initializeRpc();
+                    }
+                })
                 .build()
         );
 
@@ -37,10 +45,12 @@ public class ModMenuConfig implements ModMenuApi {
                 .setTooltip(
                         Text.translatable("mcciutils.config.customDetails.line1"),
                         Text.translatable("mcciutils.config.customDetails.line2"),
-                        Text.translatable("mcciutils.config.customDetails.line3"),
-                        Text.translatable("mcciutils.config.customDetails.line4")
+                        Text.translatable("mcciutils.config.customDetails.line3")
                 )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.customDetails = val)
+                .setSaveConsumer(val -> {
+                    ModConfig.INSTANCE.customDetails = val;
+                    LocationID.sendPresence();
+                })
                 .build()
         );
 
