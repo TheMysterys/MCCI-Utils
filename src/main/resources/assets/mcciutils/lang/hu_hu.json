@@ -1,0 +1,51 @@
+{
+    "key.category.mcciutils": "MCCI Utils",
+
+    "mcciutils.category.discord": "Discord Státusz",
+    "mcciutils.category.notifications": "Értesítések",
+    "mcciutils.category.chat": "Chat",
+    "mcciutils.category.misc": "Misc",
+
+    "mcciutils.config.enableDiscordStatus": "Discord Státusz",
+    "mcciutils.config.enableDiscordStatus.line1": "A Discord Státusz be- és kikapcsolása.",
+
+    "mcciutils.config.customDetails": "Részletek módosítása",
+    "mcciutils.config.customDetails.line1": "IP: Megjeleníti a szerver IP-címét",
+    "mcciutils.config.customDetails.line2": "FELHASZNÁLÓNÉV: Megjeleníti a játékos felhasználónevét",
+    "mcciutils.config.customDetails.line3": "MOD_VERZIÓ: Megjeleníti a mod verzióját",
+
+    "mcciutils.config.friendNotificationOptions": "Barátokról szóló értesítések",
+    "mcciutils.config.friendNotificationOptions.line1": "FELUGRÓ_ABLAK: Egy felugró ablak jelenik meg, amikor egy barát csatlakozik/elhagyja a szervert",
+    "mcciutils.config.friendNotificationOptions.line2": "HANG: Lejátszik egy hangot, amikor egy barát csatlakozik/elhagyja a szervert.",
+    "mcciutils.config.friendNotificationOptions.line3": "KIKAPCSOLVA: Letiltja a barátokról szóló értesítéseket",
+
+    "mcciutils.config.enableChatMentions": "Chat Megemlítések",
+    "mcciutils.config.enableChatMentions.line1": "SZÍN: Színesen jeleníti meg a felhasználóneved a chaten, amikor megemlítenek",
+    "mcciutils.config.enableChatMentions.line2": "HANG: Lejátszik egy hangot, amikor a chaten megemlítenek",
+    "mcciutils.config.enableChatMentions.line3": "KI: Letiltja a chat megemlítéseket",
+
+    "mcciutils.config.chatMentionColor": "Chat Megemlítés színe",
+    "mcciutils.config.chatMentionColor.line1": "Megváltoztatja a chat megemlítés színét",
+
+    "mcciutils.config.questNotificationOptions": "Küldetés Értesítések",
+    "mcciutils.config.questNotificationOptions.line1": "FELUGRÓ_ABLAK: Egy felugró ablak jelenik meg, amikor egy küldetés befejeződik",
+    "mcciutils.config.questNotificationOptions.line2": "HANG: Lejátszik egy hangot, amikor egy küldetés befejeződött",
+    "mcciutils.config.questNotificationOptions.line3": "KI: Letiltja a küldetés-értesítéseket",
+
+    "mcciutils.config.achievementNotificationOptions": "Teljesítmény-értesítések",
+    "mcciutils.config.achievementNotificationOptions.line1": "FELUGRÓ_ABLAK: Megjelenik egy felugró ablak, amikor egy teljesítményt érsz el",
+    "mcciutils.config.achievementNotificationOptions.line2": "HANG: Lejátszik egy hangot, amikor egy teljesítményt érsz el.",
+    "mcciutils.config.achievementNotificationOptions.line3": "KI: Letiltja a teljesítmény-értesítéseket",
+
+    "mcciutils.config.stackSpam": "Spam Összegyűjtés",
+    "mcciutils.config.stackSpam.line1": "ÖSSZEGYŰJTÉS: Összegyűjti az egymást követő duplikált üzeneteket",
+    "mcciutils.config.stackSpam.line2": "ÖSSZES: Az összes duplikált üzenetet összegyűjti",
+    "mcciutils.config.stackSpam.line3": "KI: Letiltja a duplikált üzenetek összegyűjtését",
+
+    "mcciutils.config.autoGG": "Automatikus GG",
+    "mcciutils.config.autoGG.line1": "Automatikusan beírja a \"gg\"-t a chatbe, amikor a játék véget ért",
+
+    "mcciutils.config.hideSlotHighlight": "Slot Kiemelés elrejtése",
+    "mcciutils.config.hideSlotHighlight.line1": "Elrejti a slot kiemelést a leltárakban, ha nincs bennük item"
+
+}
