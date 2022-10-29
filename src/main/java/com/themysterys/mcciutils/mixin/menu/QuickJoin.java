@@ -28,6 +28,9 @@ public class QuickJoin extends Screen {
         ServerAddress address = new ServerAddress("play.mccisland.net", 25565);
         ServerInfo info = new ServerInfo("MCC Island", "play.mccisland.net", false);
         info.setResourcePackPolicy(ServerInfo.ResourcePackPolicy.ENABLED);
+
+        ButtonWidget.TooltipSupplier tooltip = (button, matrices, mouseX, mouseY) -> this.renderOrderedTooltip(matrices, this.textRenderer.wrapLines(Text.of("Join MCC Island!"), 160), mouseX, mouseY);
+
         this.addDrawableChild(new ButtonWidget(
                 this.width / 2 + 104,
                 l,
@@ -39,7 +42,8 @@ public class QuickJoin extends Screen {
                         MinecraftClient.getInstance(),
                         address,
                         info
-                )
+                ),
+                tooltip
         ));
     }
 
