@@ -35,3 +35,5 @@ This mod does not add music due to it being added to the server as a option at a
    - French 
  - [**BurAndBY**](https://github.com/BurAndBY)
    - Russian
+ - [**kispintyi**](https://github.com/kispintyi)
+   - Hungarian
