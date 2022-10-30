@@ -54,7 +54,7 @@ public class DiscordRP {
     }
 
     public static void updateRPC(String location) {
-        if (!ModConfig.INSTANCE.enableDiscordStatus) return;
+        if (!ModConfig.INSTANCE.enableDiscordStatus || time == null) return;
         if (!initializedRpc) {
             initializeRpc();
         }
