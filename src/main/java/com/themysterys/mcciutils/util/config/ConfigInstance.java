@@ -21,6 +21,7 @@ public class ConfigInstance {
 
     // Misc
     public boolean hideSlotHighlight;
+    public boolean hidePanorama;
 
     public ConfigInstance() {
         // Discord
@@ -39,6 +40,7 @@ public class ConfigInstance {
 
         // Misc
         hideSlotHighlight = true;
+        hidePanorama = false;
 
     }
 

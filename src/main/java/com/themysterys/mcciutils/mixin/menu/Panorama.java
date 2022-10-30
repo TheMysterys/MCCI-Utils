@@ -1,14 +1,14 @@
 package com.themysterys.mcciutils.mixin.menu;
 
 import com.themysterys.mcciutils.McciUtils;
+import com.themysterys.mcciutils.util.config.ModConfig;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.CubeMapRenderer;
 import net.minecraft.client.gui.RotatingCubeMapRenderer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.client.sound.SoundInstance;
-import net.minecraft.sound.MusicSound;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Util;
@@ -26,6 +26,9 @@ public class Panorama extends Screen {
 
     @Mutable
     @Shadow @Final private RotatingCubeMapRenderer backgroundRenderer;
+
+    @Shadow @Final public static CubeMapRenderer PANORAMA_CUBE_MAP;
+    private CubeMapRenderer currentBackgroundRenderer;
     private static long lastInteractionTime;
     private float fade;
     private boolean isPlayingMusic = false;
@@ -49,12 +52,29 @@ public class Panorama extends Screen {
 
     @Inject(at = @At("TAIL"), method = "<init>(Z)V")
     private void onTitleScreenInit(boolean bl, CallbackInfo ci) {
+        if (ModConfig.INSTANCE.hidePanorama) {
+            this.currentBackgroundRenderer = PANORAMA_CUBE_MAP;
+            this.backgroundRenderer = new RotatingCubeMapRenderer(PANORAMA_CUBE_MAP);
+            return;
+        }
         lastInteractionTime = Util.getMeasuringTimeMs();
+        this.currentBackgroundRenderer = McciUtils.panorama;
         this.backgroundRenderer = new RotatingCubeMapRenderer(McciUtils.panorama);
     }
 
     @ModifyVariable(method = "render(Lnet/minecraft/client/util/math/MatrixStack;IIF)V", at = @At("STORE"), ordinal = 2)
     private float onRender(float value) {
+        if (ModConfig.INSTANCE.hidePanorama) {
+            if (this.currentBackgroundRenderer != PANORAMA_CUBE_MAP) {
+                this.currentBackgroundRenderer = PANORAMA_CUBE_MAP;
+                this.backgroundRenderer = new RotatingCubeMapRenderer(PANORAMA_CUBE_MAP);
+            }
+            return 1.0F;
+        }
+        if (this.currentBackgroundRenderer != McciUtils.panorama) {
+            this.currentBackgroundRenderer = McciUtils.panorama;
+            this.backgroundRenderer = new RotatingCubeMapRenderer(McciUtils.panorama);
+        }
         if (Util.getMeasuringTimeMs() - lastInteractionTime > 20000) {
             if (fade == 0 && !isPlayingMusic) {
                 MinecraftClient.getInstance().getSoundManager().play(music);

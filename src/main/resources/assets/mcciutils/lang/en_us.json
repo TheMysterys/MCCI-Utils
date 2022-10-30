@@ -46,6 +46,9 @@
     "mcciutils.config.autoGG.line1": "Automatically types \"gg\" in chat when a game ends",
 
     "mcciutils.config.hideSlotHighlight": "Hide Slot Highlight",
-    "mcciutils.config.hideSlotHighlight.line1": "Hides the hovered slot highlight in inventories when they have no item in them"
+    "mcciutils.config.hideSlotHighlight.line1": "Hides the hovered slot highlight in inventories when they have no item in them",
+
+    "mcciutils.config.hidePanorama": "Hide Panorama",
+    "mcciutils.config.hidePanorama.line1": "Sets the panorama back to Minecraft's default"
 
 }

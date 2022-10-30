@@ -153,6 +153,16 @@ public class ModMenuConfig implements ModMenuApi {
                 .build()
         );
 
+        miscCategory.addEntry(configBuilder.entryBuilder()
+                .startBooleanToggle(Text.translatable("mcciutils.config.hidePanorama"), ModConfig.INSTANCE.hidePanorama)
+                .setDefaultValue(false)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.hidePanorama.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.hidePanorama = val)
+                .build()
+        );
+
         return configBuilder;
     }
 
