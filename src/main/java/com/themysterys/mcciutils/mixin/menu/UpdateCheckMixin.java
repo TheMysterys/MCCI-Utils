@@ -1,5 +1,6 @@
 package com.themysterys.mcciutils.mixin.menu;
 
+import com.themysterys.mcciutils.McciUtils;
 import com.themysterys.mcciutils.util.McciToast;
 import com.themysterys.mcciutils.util.api.UpdateCheckerAPI;
 import net.minecraft.client.MinecraftClient;
@@ -17,7 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class UpdateCheckMixin {
 
     @Shadow @Nullable private String splashText;
-    private boolean hasShownUpdateToast = false;
 
     @Inject(at = @At("TAIL"), method = "init")
     public void checkUpdate(CallbackInfo ci) {
@@ -28,10 +28,10 @@ public class UpdateCheckMixin {
                 if (updateCheckerAPI.isUpdateAvailable) {
                     this.splashText = "MCCI Utils %s is available!".formatted(updateCheckerAPI.latestVersion);
                     Thread.sleep(3000);
-                    if (hasShownUpdateToast) return;
+                    if (McciUtils.hasShownUpdateToast) return;
                     ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
                     McciToast.add(toastManager, McciToast.Type.UPDATE, Text.literal("MCCI Utils %s is available!".formatted(updateCheckerAPI.latestVersion)));
-                    hasShownUpdateToast = true;
+                    McciUtils.hasShownUpdateToast = true;
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
