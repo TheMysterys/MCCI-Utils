@@ -9,6 +9,7 @@
   ],
   "client": [
     "ingame.AutoGG",
+    "ingame.CapesMixin",
     "ingame.ModBadge",
     "ingame.NotificationChatMixin",
     "ingame.RemoveHighlight",
