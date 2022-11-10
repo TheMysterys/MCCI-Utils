@@ -48,4 +48,7 @@
     "mcciutils.config.hideSlotHighlight": "Slot Kiemelés elrejtése",
     "mcciutils.config.hideSlotHighlight.line1": "Elrejti a slot kiemelést a leltárakban, ha nincs bennük item"
 
+    "mcciutils.config.hidePanorama": "Panoráma elrejtése",
+    "mcciutils.config.hidePanorama.line1": "Visszaállítja a panorámát a Minecraft alapértelmezett panorámaképére."
+    
 }
