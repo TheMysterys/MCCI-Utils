@@ -18,15 +18,16 @@ import java.util.Map;
 public class PlayerCapes {
 
     public static Map<String, Identifier> capes = new HashMap<>();
+    public static Map<String, Boolean> hasElytra = new HashMap<>();
 
     public static void loadPlayerCape(GameProfile player, ReturnCapeTexture response) {
         Util.getMainWorkerExecutor().execute(() -> {
             try {
                 String uuid = player.getId().toString();
                 NativeImageBackedTexture nIBT;
-                nIBT = getCapeFromURL("https://api.mysterybots.com/capes/" + player.getName() + ".png");
+                nIBT = getCapeFromURL("https://api.mysterybots.com/capes/" + player.getName() + ".png", uuid);
                 if (nIBT == null) {
-                    nIBT = getCapeFromURL("https://s.optifine.net/capes/" + player.getName() + ".png");
+                    nIBT = getCapeFromURL("https://s.optifine.net/capes/" + player.getName() + ".png", uuid);
                 }
 
                 if (nIBT == null) {
@@ -34,7 +35,6 @@ public class PlayerCapes {
                     response.response(null);
                     return;
                 }
-
                 Identifier capeTexture = MinecraftClient.getInstance().getTextureManager().registerDynamicTexture("capes-" + uuid, nIBT);
                 capes.put(uuid, capeTexture);
                 response.response(capeTexture);
@@ -48,18 +48,22 @@ public class PlayerCapes {
         return capes.get(player.getId().toString());
     }
 
-    public static NativeImageBackedTexture getCapeFromURL(String capeStringURL) {
+    public static boolean getHasElytraTexture(GameProfile player) {
+        return hasElytra.getOrDefault(player.getId().toString(), false);
+    }
+
+    public static NativeImageBackedTexture getCapeFromURL(String capeStringURL, String uuid) {
         try {
             URL capeURL = new URL(capeStringURL);
             InputStream stream = capeURL.openStream();
-            return getNativeImageBackedTexture(stream);
+            return getNativeImageBackedTexture(stream, uuid);
         } catch (IOException e) {
             return null;
         }
     }
 
     @Nullable
-    private static NativeImageBackedTexture getNativeImageBackedTexture(InputStream stream) {
+    private static NativeImageBackedTexture getNativeImageBackedTexture(InputStream stream, String uuid) {
         NativeImage cape = null;
         try {
             cape = NativeImage.read(stream);
@@ -67,6 +71,7 @@ public class PlayerCapes {
             e.printStackTrace();
         }
         if (cape != null) {
+            hasElytra.put(uuid, Math.floorDiv(cape.getWidth(),cape.getHeight()) == 2);
             return new NativeImageBackedTexture(parseCape(cape));
         }
 
