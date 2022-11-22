@@ -163,6 +163,40 @@ public class ModMenuConfig implements ModMenuApi {
                 .build()
         );
 
+
+        ConfigCategory performanceCategory = configBuilder.getOrCreateCategory(Text.translatable("mcciutils.category.performance"));
+
+        performanceCategory.addEntry(configBuilder.entryBuilder()
+                .startBooleanToggle(Text.translatable("mcciutils.config.disableGlowing"), ModConfig.INSTANCE.disableGlowing)
+                .setDefaultValue(false)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.disableGlowing.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.disableGlowing = val)
+                .build()
+        );
+
+        performanceCategory.addEntry(configBuilder.entryBuilder()
+                .startBooleanToggle(Text.translatable("mcciutils.config.disableBossbar"), ModConfig.INSTANCE.disableBossbar)
+                .setDefaultValue(false)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.disableBossbar.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.disableBossbar = val)
+                .build()
+        );
+
+        performanceCategory.addEntry(configBuilder.entryBuilder()
+                .startBooleanToggle(Text.translatable("mcciutils.config.disableScoreboard"), ModConfig.INSTANCE.disableScoreboard)
+                .setDefaultValue(false)
+                .setTooltip(
+                        Text.translatable("mcciutils.config.disableScoreboard.line1")
+                )
+                .setSaveConsumer(val -> ModConfig.INSTANCE.disableScoreboard = val)
+                .build()
+        );
+
+
         return configBuilder;
     }
 

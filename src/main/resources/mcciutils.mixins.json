@@ -4,16 +4,19 @@
   "package": "com.themysterys.mcciutils.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ingame.GlowingMixin",
     "ingame.LocationMixin",
     "multiplayer.DisconnectMixin"
   ],
   "client": [
     "ingame.AutoGG",
+    "ingame.BossbarMixin",
     "ingame.CapesMixin",
     "ingame.ElytraMixin",
     "ingame.ModBadge",
     "ingame.NotificationChatMixin",
     "ingame.RemoveHighlight",
+    "ingame.ScoreboardMixin",
     "ingame.SpamChatMixin",
     "menu.Panorama",
     "menu.QuickJoin",

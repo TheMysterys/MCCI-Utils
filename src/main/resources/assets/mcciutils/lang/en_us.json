@@ -5,6 +5,7 @@
     "mcciutils.category.notifications": "Notifications",
     "mcciutils.category.chat": "Chat",
     "mcciutils.category.misc": "Misc",
+    "mcciutils.category.performance": "Performance",
 
     "mcciutils.config.enableDiscordStatus": "Toggle Discord Status",
     "mcciutils.config.enableDiscordStatus.line1": "Toggles the Discord Status on and off.",
@@ -49,6 +50,15 @@
     "mcciutils.config.hideSlotHighlight.line1": "Hides the hovered slot highlight in inventories when they have no item in them",
 
     "mcciutils.config.hidePanorama": "Hide Panorama",
-    "mcciutils.config.hidePanorama.line1": "Sets the panorama back to Minecraft's default"
+    "mcciutils.config.hidePanorama.line1": "Sets the panorama back to Minecraft's default",
+
+    "mcciutils.config.disableGlowing": "Disable Glowing",
+    "mcciutils.config.disableGlowing.line1": "Disables the glowing effect",
+
+    "mcciutils.config.disableBossbar": "Disable Bossbar",
+    "mcciutils.config.disableBossbar.line1": "Disables the bossbar",
+
+    "mcciutils.config.disableScoreboard": "Disable Scoreboard",
+    "mcciutils.config.disableScoreboard.line1": "Disables the scoreboard"
 
 }

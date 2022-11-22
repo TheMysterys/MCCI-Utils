@@ -23,6 +23,11 @@ public class ConfigInstance {
     public boolean hideSlotHighlight;
     public boolean hidePanorama;
 
+    // Performance
+    public boolean disableGlowing;
+    public boolean disableBossbar;
+    public boolean disableScoreboard;
+
     public ConfigInstance() {
         // Discord
         enableDiscordStatus = true;
@@ -41,6 +46,11 @@ public class ConfigInstance {
         // Misc
         hideSlotHighlight = true;
         hidePanorama = false;
+
+        // Performance
+        disableGlowing = false;
+        disableBossbar = false;
+        disableScoreboard = false;
 
     }
 
