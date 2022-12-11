@@ -27,7 +27,7 @@ public class PlayerCapes {
                 NativeImageBackedTexture nIBT;
                 nIBT = getCapeFromURL("https://api.mysterybots.com/capes/" + player.getName() + ".png", uuid);
                 if (nIBT == null) {
-                    nIBT = getCapeFromURL("https://s.optifine.net/capes/" + player.getName() + ".png", uuid);
+                    nIBT = getCapeFromURL("http://s.optifine.net/capes/" + player.getName() + ".png", uuid);
                 }
 
                 if (nIBT == null) {
