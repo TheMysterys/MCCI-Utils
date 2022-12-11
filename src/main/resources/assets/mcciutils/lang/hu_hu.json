@@ -5,6 +5,7 @@
     "mcciutils.category.notifications": "Értesítések",
     "mcciutils.category.chat": "Chat",
     "mcciutils.category.misc": "Misc",
+    "mcciutils.category.performance": "Teljesítmény",
 
     "mcciutils.config.enableDiscordStatus": "Discord Státusz",
     "mcciutils.config.enableDiscordStatus.line1": "A Discord Státusz be- és kikapcsolása.",
@@ -50,5 +51,14 @@
 
     "mcciutils.config.hidePanorama": "Panoráma elrejtése",
     "mcciutils.config.hidePanorama.line1": "Visszaállítja a panorámát a Minecraft alapértelmezett panorámaképére."
+    
+    "mcciutils.config.disableGlowing": "Fénylés kikapcsolása",
+    "mcciutils.config.disableGlowing.line1": "Kikapcsolja a fénylés effektet",
+
+    "mcciutils.config.disableBossbar": "Bossbar Kikapcsolása",
+    "mcciutils.config.disableBossbar.line1": "Kikapcsolja a Bossbart",
+
+    "mcciutils.config.disableScoreboard": "Scoreboard Kikapcsolása",
+    "mcciutils.config.disableScoreboard.line1": "Kikapcsolja a Scoreboardot"
     
 }
