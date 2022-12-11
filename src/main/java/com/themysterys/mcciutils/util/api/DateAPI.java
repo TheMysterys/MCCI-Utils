@@ -39,6 +39,9 @@ public class DateAPI {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         calendar.setTimeZone(TimeZone.getTimeZone("UTC"));
+        if (McciUtils.mccAPI.mccDate == null) {
+            return false;
+        }
         return calendar.get(Calendar.DAY_OF_YEAR) == McciUtils.mccAPI.mccDate.get(Calendar.DAY_OF_YEAR);
     }
 }

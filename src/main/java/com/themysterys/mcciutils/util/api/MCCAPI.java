@@ -23,9 +23,10 @@ public class MCCAPI {
         if (json == null) {
             return;
         }
+        String dateString = json.get("data").getAsJsonObject().get("date").getAsString();
         // Convert string timestamp to date
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(Date.from(Instant.parse(json.get("data").getAsJsonObject().get("date").getAsString())));
+        calendar.setTime(Date.from(Instant.parse(dateString)));
         calendar.setTimeZone(TimeZone.getTimeZone("UTC"));
         mccDate = calendar;
     }
