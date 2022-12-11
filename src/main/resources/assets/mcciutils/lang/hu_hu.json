@@ -47,10 +47,10 @@
     "mcciutils.config.autoGG.line1": "Automatikusan beírja a \"gg\"-t a chatbe, amikor a játék véget ért",
 
     "mcciutils.config.hideSlotHighlight": "Slot Kiemelés elrejtése",
-    "mcciutils.config.hideSlotHighlight.line1": "Elrejti a slot kiemelést a leltárakban, ha nincs bennük item"
+    "mcciutils.config.hideSlotHighlight.line1": "Elrejti a slot kiemelést a leltárakban, ha nincs bennük item",
 
     "mcciutils.config.hidePanorama": "Panoráma elrejtése",
-    "mcciutils.config.hidePanorama.line1": "Visszaállítja a panorámát a Minecraft alapértelmezett panorámaképére."
+    "mcciutils.config.hidePanorama.line1": "Visszaállítja a panorámát a Minecraft alapértelmezett panorámaképére.",
     
     "mcciutils.config.disableGlowing": "Fénylés kikapcsolása",
     "mcciutils.config.disableGlowing.line1": "Kikapcsolja a fénylés effektet",
