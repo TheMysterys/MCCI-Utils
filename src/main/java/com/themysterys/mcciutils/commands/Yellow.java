@@ -17,7 +17,7 @@ public class Yellow {
                 ctx.getSource().sendError(Text.of("You are not on MCC Island!"));
                 return 1;
             }
-            ctx.getSource().getPlayer().playSound(SoundEvents.GOAT_HORN_SOUNDS.get(0), SoundCategory.MASTER, 1F, 1F);
+            ctx.getSource().getPlayer().playSound(SoundEvents.GOAT_HORN_SOUNDS.get(0).value(), SoundCategory.MASTER, 1F, 1F);
             ctx.getSource().sendFeedback(Text.literal("The Yellow Army calls!").formatted(Formatting.YELLOW));
             return 1;
         }));

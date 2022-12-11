@@ -4,6 +4,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ConnectScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.client.gui.tooltip.Tooltip;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.network.ServerAddress;
 import net.minecraft.client.network.ServerInfo;
@@ -29,22 +30,18 @@ public class QuickJoin extends Screen {
         ServerInfo info = new ServerInfo("MCC Island", "play.mccisland.net", false);
         info.setResourcePackPolicy(ServerInfo.ResourcePackPolicy.ENABLED);
 
-        ButtonWidget.TooltipSupplier tooltip = (button, matrices, mouseX, mouseY) -> this.renderOrderedTooltip(matrices, this.textRenderer.wrapLines(Text.of("Join MCC Island!"), 160), mouseX, mouseY);
-
-        this.addDrawableChild(new ButtonWidget(
-                this.width / 2 + 104,
-                l,
-                20,
-                20,
-                joinIcon(),
-                (button) -> ConnectScreen.connect(
+        this.addDrawableChild(
+                ButtonWidget.builder(joinIcon(), (button) -> ConnectScreen.connect(
                         MinecraftClient.getInstance().currentScreen,
                         MinecraftClient.getInstance(),
                         address,
                         info
-                ),
-                tooltip
-        ));
+                ))
+                        .position(this.width / 2 + 104,l)
+                        .size(20, 20)
+                        .tooltip(Tooltip.of(Text.of("Join MCC Island!")))
+                        .build()
+        );
     }
 
 

@@ -23,15 +23,15 @@
       "com.themysterys.mcciutils.McciUtils"
     ],
     "preLaunch": [
-      "com.themysterys.mcciutils.util.PreLoad"
+      "com.llamalad7.mixinextras.MixinExtrasBootstrap::init"
     ]
   },
   "mixins": [
     "mcciutils.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.9",
-    "fabric": "*",
-    "minecraft": "1.19.2"
+    "fabricloader": ">=0.14.11",
+    "fabric-api": "0.68.1+1.19.3",
+    "minecraft": ">=1.19.3"
   }
 }

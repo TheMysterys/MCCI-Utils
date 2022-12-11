@@ -21,8 +21,8 @@ public class AutoGG {
         if (!McciUtils.isOnMCCI() || !ModConfig.INSTANCE.autoGG) return;
         if (Objects.equals(message.getStyle().getColor(), TextColor.fromRgb(0x65FFFF))) {
             if(message.getString().matches("\\[.] Game over!")) {
-                if (MinecraftClient.getInstance().player != null) {
-                    MinecraftClient.getInstance().player.sendCommand("l gg");
+                if (MinecraftClient.getInstance().getNetworkHandler() != null) {
+                    MinecraftClient.getInstance().getNetworkHandler().sendCommand("l gg");
                 }
             }
         }
