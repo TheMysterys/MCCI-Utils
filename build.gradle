@@ -15,7 +15,7 @@ repositories {
 
     mavenCentral()
     maven { url "https://maven.shedaniel.me/" }
-    maven { url "https://maven.terraformersmc.com" }
+    maven { url "https://maven.terraformersmc.com/releases" }
     maven { url "https://jitpack.io" }
 }
 
@@ -31,8 +31,8 @@ dependencies {
     implementation("com.github.JnCrMx:discord-game-sdk4j:0.5.5")
     include("com.github.JnCrMx:discord-game-sdk4j:0.5.5")
 
-    implementation "org.json:json:20211205"
-    include("org.json:json:20211205")
+    implementation 'org.json:json:20220320'
+    include('org.json:json:20220320')
 
     implementation "org.java-websocket:Java-WebSocket:1.5.3"
     include("org.java-websocket:Java-WebSocket:1.5.3")
