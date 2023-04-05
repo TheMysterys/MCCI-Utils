@@ -29,9 +29,9 @@ public class NotificationChatMixin {
 
     @Inject(at = @At("HEAD"), method = "addMessage(Lnet/minecraft/text/Text;)V")
     private void addMessage(Text message, CallbackInfo ci) {
-        if (!McciUtils.isOnMCCI()) {
+        /*if (!McciUtils.isOnMCCI()) {
             return;
-        }
+        }*/
 
         // Friend notifications
         if (ModConfig.INSTANCE.friendNotifications != ConfigInstance.POPUP_NOTIFICATION_OPTIONS.OFF) {
@@ -97,14 +97,14 @@ public class NotificationChatMixin {
         }
 
         // Achievement Completion
-        if (ModConfig.INSTANCE.questCompleteOptions != ConfigInstance.POPUP_NOTIFICATION_OPTIONS.OFF) {
-            if (message.getString().matches("^\\(.\\) Achievement unlocked: \\[(.*)]")){
-                Pattern pattern = Pattern.compile("^\\(.\\) Achievement unlocked: \\[(.*)]");
+        if (ModConfig.INSTANCE.badgeAchievedOptions != ConfigInstance.POPUP_NOTIFICATION_OPTIONS.OFF) {
+            if (message.getString().matches("^\\(.\\) You achieved the \\[(.*)]")){
+                Pattern pattern = Pattern.compile("^\\(.\\) You achieved the \\[(.*)]");
                 String achievementName = pattern.matcher(message.getString()).replaceFirst("$1");
                 if (achievementName != null) {
                     if (ModConfig.INSTANCE.shouldShowQuestPopup()) {
                         ToastManager toastManager = MinecraftClient.getInstance().getToastManager();
-                        McciToast.add(toastManager, McciToast.Type.ACHIEVEMENT_UNLOCKED, Text.of(achievementName));
+                        McciToast.add(toastManager, McciToast.Type.BADGE_ACHIEVED, Text.of(achievementName));
                     }
                     if (ModConfig.INSTANCE.shouldPlayQuestSound() && MinecraftClient.getInstance().player != null) {
                         MinecraftClient.getInstance().player.playSound(UNLOCK_SOUND, SoundCategory.MASTER, 1F, 1F);

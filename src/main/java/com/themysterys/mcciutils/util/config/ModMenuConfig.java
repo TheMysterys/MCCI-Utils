@@ -82,14 +82,14 @@ public class ModMenuConfig implements ModMenuApi {
         );
 
         notificationCategory.addEntry(configBuilder.entryBuilder()
-                .startEnumSelector(Text.translatable("mcciutils.config.achievementNotificationOptions"), ConfigInstance.POPUP_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.achievementUnlockOptions)
+                .startEnumSelector(Text.translatable("mcciutils.config.badgeNotificationOptions"), ConfigInstance.POPUP_NOTIFICATION_OPTIONS.class, ModConfig.INSTANCE.badgeAchievedOptions)
                 .setDefaultValue(ConfigInstance.POPUP_NOTIFICATION_OPTIONS.BOTH)
                 .setTooltip(
-                        Text.translatable("mcciutils.config.achievementNotificationOptions.line1"),
-                        Text.translatable("mcciutils.config.achievementNotificationOptions.line2"),
-                        Text.translatable("mcciutils.config.achievementNotificationOptions.line3")
+                        Text.translatable("mcciutils.config.badgeNotificationOptions.line1"),
+                        Text.translatable("mcciutils.config.badgeNotificationOptions.line2"),
+                        Text.translatable("mcciutils.config.badgeNotificationOptions.line3")
                 )
-                .setSaveConsumer(val -> ModConfig.INSTANCE.achievementUnlockOptions = val)
+                .setSaveConsumer(val -> ModConfig.INSTANCE.badgeAchievedOptions = val)
                 .build()
         );
 

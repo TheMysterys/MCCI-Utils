@@ -3,6 +3,7 @@ package com.themysterys.mcciutils.util;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.toast.Toast;
 import net.minecraft.client.toast.ToastManager;
 import net.minecraft.client.util.math.MatrixStack;
@@ -46,17 +47,17 @@ public class McciToast implements Toast {
         int width = this.getWidth();
         int height = this.getHeight();
         if (width == 160 && this.lines.size() <= 1) {
-            manager.drawTexture(matrices, 0, 0, 0, this.v, width, height);
+            DrawableHelper.drawTexture(matrices, 0, 0, 0, this.v, width, height);
         } else {
 
             int length = Math.min(4, height - 28);
-            this.drawPart(matrices, manager, width, 0, 0, 28);
+            this.drawPart(matrices, width, 0, 0, 28);
 
             for (int m = 28; m < height - length; m += 10) {
-                this.drawPart(matrices, manager, width, 16, m, Math.min(16, height - m - length));
+                this.drawPart(matrices, width, 16, m, Math.min(16, height - m - length));
             }
 
-            this.drawPart(matrices, manager, width, 32 - length, height - length, length);
+            this.drawPart(matrices, width, 32 - length, height - length, length);
         }
 
         if (this.lines == null) {
@@ -73,15 +74,15 @@ public class McciToast implements Toast {
     }
 
     // Stole from SystemToast (Core MC code)
-    private void drawPart(MatrixStack matrices, ToastManager manager, int width, int textureV, int y, int height) {
+    private void drawPart(MatrixStack matrices, int width, int textureV, int y, int height) {
         int i = textureV == 0 ? 28 : 5;
         int j = Math.min(60, width - i);
-        manager.drawTexture(matrices, 0, y, 0, this.v + textureV, i, height);
+        DrawableHelper.drawTexture(matrices, 0, y, 0, this.v + textureV, i, height);
         for (int k = i; k < width - j; k += 32) {
-            manager.drawTexture(matrices, k, y, 32, this.v + textureV, Math.min(64, width - k - j), height);
+            DrawableHelper.drawTexture(matrices, k, y, 32, this.v + textureV, Math.min(64, width - k - j), height);
         }
 
-        manager.drawTexture(matrices, width - j, y, 160 - j, this.v + textureV, j, height);
+        DrawableHelper.drawTexture(matrices, width - j, y, 160 - j, this.v + textureV, j, height);
     }
 
     public int getWidth() {
@@ -97,7 +98,7 @@ public class McciToast implements Toast {
         FRIEND_JOIN("Friend Joined!", 32),
         FRIEND_LEAVE("Friend Left!", 32),
         QUEST_COMPLETE("Quest Completed!", 64),
-        ACHIEVEMENT_UNLOCKED("Achievement Unlocked!", 96);
+        BADGE_ACHIEVED("Badge Achieved!", 96);
 
         final String title;
         final int v;

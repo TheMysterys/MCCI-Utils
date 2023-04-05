@@ -11,7 +11,7 @@ public class ConfigInstance {
     // Notifications
     public POPUP_NOTIFICATION_OPTIONS friendNotifications;
     public POPUP_NOTIFICATION_OPTIONS questCompleteOptions;
-    public POPUP_NOTIFICATION_OPTIONS achievementUnlockOptions;
+    public POPUP_NOTIFICATION_OPTIONS badgeAchievedOptions;
 
     // Chat
     public CHAT_NOTIFICATION_OPTIONS chatMentions;
@@ -35,7 +35,7 @@ public class ConfigInstance {
         // Notifications
         friendNotifications = POPUP_NOTIFICATION_OPTIONS.BOTH;
         questCompleteOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
-        achievementUnlockOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
+        badgeAchievedOptions = POPUP_NOTIFICATION_OPTIONS.BOTH;
 
         // Chat
         chatMentions = CHAT_NOTIFICATION_OPTIONS.BOTH;
