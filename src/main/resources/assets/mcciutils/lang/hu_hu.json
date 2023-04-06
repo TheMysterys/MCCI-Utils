@@ -33,10 +33,10 @@
     "mcciutils.config.questNotificationOptions.line2": "HANG: Lejátszik egy hangot, amikor egy küldetés befejeződött",
     "mcciutils.config.questNotificationOptions.line3": "KI: Letiltja a küldetés-értesítéseket",
 
-    "mcciutils.config.achievementNotificationOptions": "Teljesítmény-értesítések",
-    "mcciutils.config.achievementNotificationOptions.line1": "FELUGRÓ_ABLAK: Megjelenik egy felugró ablak, amikor egy teljesítményt érsz el",
-    "mcciutils.config.achievementNotificationOptions.line2": "HANG: Lejátszik egy hangot, amikor egy teljesítményt érsz el.",
-    "mcciutils.config.achievementNotificationOptions.line3": "KI: Letiltja a teljesítmény-értesítéseket",
+    "mcciutils.config.badgeNotificationOptions": "Kiérdemelt Jelvény Értesítések",
+    "mcciutils.config.badgeNotificationOptions.line1": "FELUGRÓ_ABLAK: Megjelenik egy felugró ablak, amikor szerzel egy jelvényt",
+    "mcciutils.config.badgeNotificationOptions.line2": "HANG: Lejátszik egy hangot, amikor szerzel egy jelvényt",
+    "mcciutils.config.badgeNotificationOptions.line3": "KI: Letiltja a kiérdemelt jelvény értesítéseket",
 
     "mcciutils.config.stackSpam": "Spam Összegyűjtés",
     "mcciutils.config.stackSpam.line1": "ÖSSZEGYŰJTÉS: Összegyűjti az egymást követő duplikált üzeneteket",
