@@ -36,7 +36,7 @@
     "mcciutils.config.badgeNotificationOptions": "Toggle Achievement Notifications",
     "mcciutils.config.badgeNotificationOptions.line1": "POPUP: Shows a popup when an badge is achieved",
     "mcciutils.config.badgeNotificationOptions.line2": "SOUND: Plays a sound when an badge is achieved",
-    "mcciutils.config.badgeNotificationOptions.line3": "OFF: Disables badge achieved",
+    "mcciutils.config.badgeNotificationOptions.line3": "OFF: Disables badge achieved notifications",
 
     "mcciutils.config.stackSpam": "Toggle Spam Stacking",
     "mcciutils.config.stackSpam.line1": "CONSECUTIVE: Stacks consecutive duplicate messages",
