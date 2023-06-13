@@ -1,18 +1,19 @@
-# What is MCCI Utils?​
-MCCI Utils is a mod made by myself which helps with all things MCC Island. It provides some quality of life features to make your time on MCC Island just that bit more fun and enjoyable. I am constantly looking for suggestions for things to add and can't wait for you to try it out.
+### MCCI Utils has been discontinued
+After having realized that working on MCCI Utils made playing on MCC Island less fun, I've decided that I will be discontinuing the mod. All source code is available if you wish to fork it and continue updating it with new things.  
+I personally want to be able to enjoy the server without having to constantly think about new things to add to the mod as well as debugging and updating for new versions. Thank you everyone who downloaded the mod and helped with bugs, feature requests and translations. You guys are all amazing.
+
+# What is MCCI Utils?
+MCCI Utils is a mod that provides players with features to make their time on MCC Island more immersive and enjoyable. It adds multiple different features like chat mentions and Discord status, and many more. I'm constantly taking suggestions for features to add as well as adding hidden Easter Eggs which relate to events that have happened on the server.
 
 Currently the mod contains the following features:
-- Discord Status
-- Friend Join Notifications (With Custom Sounds)
-- Chat Mentions (With Custom Sound)
-- Quest and Achievement notifications
-- Custom Toasts
-- Icon showing who is using the mod
-- Stacking duplicate messages
-- Secret Easter Eggs
-- And more (Check the change logs)
-
-*Currently the mod is in alpha and I will be slowly adding features as I see fit.*
+ - Discord Status
+ - Friend Join Notifications (With Custom Sounds)
+ - Chat Mentions (With Custom Sound)
+ - Quest and Achievement notifications
+ - Custom Toasts
+ - Stacking duplicate messages
+ - Secret Easter Eggs
+ - And more (Check the change logs)
 
 If you wish to suggest features or help contribute to the project, check out the [GitHub](https://github.com/TheMysterys/MCCI-Utils)
 
